@@ -1,0 +1,2917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID345 Accelerator — Colorado's First AI Accelerator</title>
+  <meta name="description" content="ID345 Accelerator — Colorado's first AI accelerator. We build together. A visual guide to our 6-week program for AI-era founders.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #1a1410;
+      --card-bg: #241e17;
+      --surface: #2e261d;
+      --primary: #ff9500;
+      --secondary: #e85d3a;
+      --accent: #ffd700;
+      --text: #f5e6d3;
+      --text-muted: #c4a882;
+      --neutral-500: #8b7355;
+      --neutral-700: #4a3c2e;
+      --success: #4ade80;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      line-height: 1.75;
+    }
+
+    /* ===== UTILITY ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-narrow {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(26, 20, 16, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255, 149, 0, 0.15);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: var(--bg) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: box-shadow 0.3s ease, transform 0.2s ease !important;
+    }
+
+    .nav-cta:hover {
+      box-shadow: 0 0 20px rgba(255, 149, 0, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      box-shadow: 0 0 30px rgba(255, 149, 0, 0.5), 0 0 60px rgba(255, 149, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid rgba(245, 230, 211, 0.25);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 20px rgba(255, 149, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* ===== SCAN LINE DIVIDER ===== */
+    .scan-divider {
+      position: relative;
+      height: 4rem;
+      overflow: hidden;
+      opacity: 0.3;
+    }
+
+    .scan-divider::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(255, 149, 0, 0.08) 2px, rgba(255, 149, 0, 0.08) 4px
+      );
+    }
+
+    .scan-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    /* ===== RETRO DOT-DASH DIVIDER ===== */
+    .retro-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 2rem 0;
+      opacity: 0.35;
+    }
+
+    .retro-divider::before,
+    .retro-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 200px;
+      height: 1px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--primary) 0px, var(--primary) 12px,
+        transparent 12px, transparent 18px,
+        var(--primary) 18px, var(--primary) 22px,
+        transparent 22px, transparent 28px
+      );
+    }
+
+    .retro-divider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ===== HERO SECTION ===== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: -2%;
+      border-radius: 50% / 8%;
+      box-shadow:
+        inset 0 0 120px rgba(255, 149, 0, 0.05),
+        inset 0 0 60px rgba(26, 20, 16, 0.8);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0, 0, 0, 0.06) 2px, rgba(0, 0, 0, 0.06) 4px
+      );
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(255, 149, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(232, 93, 58, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 60%);
+      animation: heroGlow 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-2%, -1%) scale(1.05); }
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 149, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 149, 0, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      max-width: 900px;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+      min-height: 1.2em;
+    }
+
+    .hero-title .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: var(--primary);
+      margin-left: 4px;
+      vertical-align: baseline;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-tagline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.6s ease;
+    }
+
+    .hero-tagline.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.6s ease 0.15s;
+    }
+
+    .hero-subtitle.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.6s ease 0.3s;
+    }
+
+    .hero-buttons.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease 2s forwards;
+    }
+
+    .hero-scroll-hint span {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--primary), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    /* ===== SECTIONS COMMON ===== */
+    section {
+      padding: 6rem 0;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading .highlight {
+      color: var(--primary);
+    }
+
+    .section-intro {
+      font-size: 1.1875rem;
+      line-height: 1.8;
+      max-width: 760px;
+    }
+
+    /* ===== PROGRAM OVERVIEW SECTION ===== */
+    #overview {
+      position: relative;
+    }
+
+    .overview-story {
+      max-width: 760px;
+      margin-bottom: 3.5rem;
+    }
+
+    .overview-story p {
+      font-size: 1.125rem;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .overview-story p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Differentiator cards */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .diff-card {
+      padding: 2rem 1.75rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 149, 0, 0.08);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .diff-card:hover {
+      border-color: rgba(255, 149, 0, 0.2);
+      box-shadow: 0 0 30px rgba(255, 149, 0, 0.05);
+    }
+
+    .diff-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 149, 0, 0.08);
+      border: 1px solid rgba(255, 149, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .diff-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .diff-card p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1.25rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 149, 0, 0.08);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: rgba(255, 149, 0, 0.2);
+      box-shadow: 0 0 30px rgba(255, 149, 0, 0.05);
+    }
+
+    .stat-number {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-family: var(--font-heading);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-sublabel {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .director-note {
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      background: rgba(255, 149, 0, 0.04);
+      border-left: 3px solid var(--primary);
+    }
+
+    .director-note p {
+      font-size: 1rem;
+      line-height: 1.7;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    .director-note strong {
+      color: var(--text);
+      font-style: normal;
+    }
+
+    /* ===== INVESTMENT THESIS ===== */
+    #thesis {
+      background: var(--card-bg);
+      position: relative;
+    }
+
+    #thesis::before,
+    #thesis::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 149, 0, 0.2), transparent);
+    }
+
+    #thesis::before { top: 0; }
+    #thesis::after { bottom: 0; }
+
+    .thesis-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .thesis-text p {
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Shift comparison */
+    .shift-compare {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .shift-box {
+      padding: 1.75rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 149, 0, 0.1);
+      position: relative;
+    }
+
+    .shift-box.old {
+      background: rgba(139, 115, 85, 0.08);
+      border-color: rgba(139, 115, 85, 0.2);
+    }
+
+    .shift-box.new {
+      background: rgba(255, 149, 0, 0.06);
+      border-color: rgba(255, 149, 0, 0.25);
+    }
+
+    .shift-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .shift-box.old .shift-label {
+      color: var(--neutral-500);
+    }
+
+    .shift-box.new .shift-label {
+      color: var(--primary);
+    }
+
+    .shift-box h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .shift-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .shift-box ul li {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .shift-box.old ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 1px;
+      background: var(--neutral-500);
+    }
+
+    .shift-box.new ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .shift-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    .shift-arrow svg {
+      opacity: 0.5;
+    }
+
+    /* Pipeline diagram */
+    .pipeline {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pipeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.25rem 1rem;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .pipeline-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      border: 2px solid;
+    }
+
+    .pipeline-step:nth-child(1) .pipeline-icon {
+      border-color: var(--neutral-500);
+      background: rgba(139, 115, 85, 0.1);
+    }
+
+    .pipeline-step:nth-child(3) .pipeline-icon {
+      border-color: var(--secondary);
+      background: rgba(232, 93, 58, 0.1);
+    }
+
+    .pipeline-step:nth-child(5) .pipeline-icon {
+      border-color: var(--primary);
+      background: rgba(255, 149, 0, 0.1);
+    }
+
+    .pipeline-step:nth-child(7) .pipeline-icon {
+      border-color: var(--accent);
+      background: rgba(255, 215, 0, 0.1);
+    }
+
+    .pipeline-name {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .pipeline-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .pipeline-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 0.25rem;
+      color: var(--primary);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* ===== MENTOR NETWORK ===== */
+    #mentors {
+      position: relative;
+    }
+
+    .mentor-intro {
+      max-width: 700px;
+      margin-bottom: 3.5rem;
+    }
+
+    .mentor-intro p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+    }
+
+    /* Mentor hub diagram */
+    .mentor-diagram {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+      min-height: 480px;
+    }
+
+    .mentor-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 149, 0, 0.15), rgba(255, 149, 0, 0.05));
+      border: 2px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 3;
+      box-shadow: 0 0 40px rgba(255, 149, 0, 0.1);
+    }
+
+    .mentor-hub-label {
+      font-family: var(--font-heading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mentor-hub-sub {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Ring around hub */
+    .mentor-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 149, 0, 0.15);
+      z-index: 1;
+    }
+
+    .mentor-ring-outer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 149, 0, 0.08);
+      z-index: 0;
+    }
+
+    /* Orbiting nodes */
+    .mentor-node {
+      position: absolute;
+      z-index: 2;
+      width: 120px;
+      text-align: center;
+    }
+
+    .mentor-node-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin: 0 auto 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid;
+    }
+
+    .mentor-node-title {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+
+    .mentor-node-freq {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      color: var(--text-muted);
+    }
+
+    /* Node positions around the circle */
+    .mentor-node.pos-top {
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mentor-node.pos-right {
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
+    }
+
+    .mentor-node.pos-bottom {
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mentor-node.pos-left {
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+    }
+
+    .mentor-node.pos-top-right {
+      top: 30px;
+      right: 0px;
+    }
+
+    /* Connection lines (SVG overlay) */
+    .mentor-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    /* Mentor summary cards */
+    .mentor-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .mentor-summary-card {
+      padding: 1.75rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 149, 0, 0.08);
+      text-align: center;
+    }
+
+    .mentor-summary-value {
+      font-family: var(--font-mono);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .mentor-summary-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Mentor detail cards */
+    .mentor-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .mentor-detail-card {
+      padding: 1.5rem;
+      border-radius: 10px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 149, 0, 0.08);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .mentor-detail-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mentor-detail-card h4 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .mentor-detail-card p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== WEEKLY RHYTHM - CALENDAR ===== */
+    #rhythm {
+      background: var(--card-bg);
+      position: relative;
+    }
+
+    #rhythm::before,
+    #rhythm::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 149, 0, 0.2), transparent);
+    }
+
+    #rhythm::before { top: 0; }
+    #rhythm::after { bottom: 0; }
+
+    .rhythm-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .rhythm-header p {
+      font-size: 1.0625rem;
+    }
+
+    /* Calendar grid */
+    .weekly-calendar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: rgba(255, 149, 0, 0.06);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 149, 0, 0.1);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cal-day {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+    }
+
+    .cal-day-header {
+      padding: 0.875rem 1rem;
+      background: var(--surface);
+      border-bottom: 1px solid rgba(255, 149, 0, 0.06);
+    }
+
+    .cal-day-name {
+      font-family: var(--font-heading);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cal-day-body {
+      padding: 0.875rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .cal-event {
+      padding: 0.625rem 0.75rem;
+      border-radius: 8px;
+      border-left: 3px solid;
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .cal-event-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.8125rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cal-event-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .cal-event-time {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    .cal-event.director {
+      border-left-color: var(--primary);
+      background: rgba(255, 149, 0, 0.06);
+    }
+
+    .cal-event.specialist {
+      border-left-color: var(--secondary);
+      background: rgba(232, 93, 58, 0.06);
+    }
+
+    .cal-event.community {
+      border-left-color: var(--accent);
+      background: rgba(255, 215, 0, 0.06);
+    }
+
+    .cal-event.stories {
+      border-left-color: var(--success);
+      background: rgba(74, 222, 128, 0.06);
+    }
+
+    .cal-event.sync {
+      border-left-color: var(--neutral-500);
+      background: rgba(139, 115, 85, 0.06);
+    }
+
+    .cal-event.social {
+      border-left-color: #a78bfa;
+      background: rgba(167, 139, 250, 0.06);
+    }
+
+    .cal-event.mentor-checkin {
+      border-left-color: var(--primary);
+      background: rgba(255, 149, 0, 0.04);
+      border-left-style: dashed;
+    }
+
+    /* Ongoing bar */
+    .cal-ongoing {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      background: rgba(255, 149, 0, 0.04);
+      border: 1px dashed rgba(255, 149, 0, 0.15);
+      text-align: center;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cal-ongoing-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .cal-ongoing-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== SIX-WEEK PROGRAM TIMELINE ===== */
+    #program {
+      position: relative;
+    }
+
+    .program-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .program-header p {
+      font-size: 1.0625rem;
+    }
+
+    /* Journey timeline */
+    .journey {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Vertical line connecting weeks */
+    .journey::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 40px;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(
+        to bottom,
+        var(--neutral-500) 0%,
+        var(--secondary) 25%,
+        var(--primary) 50%,
+        var(--primary) 75%,
+        var(--accent) 100%
+      );
+      opacity: 0.3;
+      border-radius: 3px;
+    }
+
+    .journey-week {
+      position: relative;
+      padding-left: 100px;
+      padding-bottom: 3rem;
+    }
+
+    .journey-week:last-child {
+      padding-bottom: 0;
+    }
+
+    /* Week marker */
+    .journey-marker {
+      position: absolute;
+      left: 22px;
+      top: 6px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .journey-marker-num {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .journey-week:last-child .journey-marker {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .journey-week:last-child .journey-marker-num {
+      color: var(--accent);
+    }
+
+    /* Week content card */
+    .journey-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 149, 0, 0.08);
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    .journey-card:hover {
+      border-color: rgba(255, 149, 0, 0.15);
+    }
+
+    .journey-card-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(255, 149, 0, 0.06);
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .journey-week-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(255, 149, 0, 0.08);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .journey-week-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .journey-week-theme {
+      font-family: var(--font-heading);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--primary);
+      width: 100%;
+      font-style: italic;
+    }
+
+    .journey-card-body {
+      padding: 1.5rem 2rem;
+    }
+
+    .journey-card-body > p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    /* Day breakdown grid inside each week */
+    .week-days {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .week-day {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: var(--surface);
+      border-left: 3px solid;
+    }
+
+    .week-day-name {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .week-day-activity {
+      font-size: 0.8125rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .week-day.mon {
+      border-left-color: var(--primary);
+    }
+    .week-day.mon .week-day-name { color: var(--primary); }
+
+    .week-day.tue-thu {
+      border-left-color: var(--secondary);
+    }
+    .week-day.tue-thu .week-day-name { color: var(--secondary); }
+
+    .week-day.wed {
+      border-left-color: var(--accent);
+    }
+    .week-day.wed .week-day-name { color: var(--accent); }
+
+    .week-day.fri {
+      border-left-color: var(--success);
+    }
+    .week-day.fri .week-day-name { color: var(--success); }
+
+    /* Mentor focus bar */
+    .mentor-focus {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: rgba(255, 149, 0, 0.04);
+      border: 1px dashed rgba(255, 149, 0, 0.12);
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .mentor-focus-label {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      white-space: nowrap;
+      padding-top: 0.1rem;
+    }
+
+    .mentor-focus p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Demo Day special card */
+    .demo-day-card {
+      margin-top: 0.5rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(255, 149, 0, 0.04));
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    .demo-day-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .demo-day-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .demo-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .demo-detail-icon {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ===== SELECTION CRITERIA ===== */
+    #criteria {
+      background: var(--card-bg);
+      position: relative;
+    }
+
+    #criteria::before,
+    #criteria::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 149, 0, 0.2), transparent);
+    }
+
+    #criteria::before { top: 0; }
+    #criteria::after { bottom: 0; }
+
+    .criteria-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .criteria-card {
+      padding: 1.75rem 1.5rem;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid rgba(255, 149, 0, 0.08);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .criteria-card:hover {
+      border-color: rgba(255, 149, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .criteria-num {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      opacity: 0.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .criteria-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 149, 0, 0.08);
+      border: 1px solid rgba(255, 149, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .criteria-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .criteria-card p {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid rgba(255, 149, 0, 0.1);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-content {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span {
+      color: var(--primary);
+    }
+
+    .footer-tagline {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-location {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 149, 0, 0.06);
+    }
+
+    .footer-bottom p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .footer-badge {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      opacity: 0.7;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .thesis-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .criteria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .weekly-calendar {
+        grid-template-columns: 1fr;
+      }
+
+      .cal-day {
+        min-height: auto;
+      }
+
+      .cal-day-header {
+        background: var(--surface);
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mentor-details {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .pipeline-arrow {
+        transform: rotate(90deg);
+        padding: 0.25rem 0;
+      }
+
+      .mentor-diagram {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(26, 20, 16, 0.98);
+        backdrop-filter: blur(12px);
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(255, 149, 0, 0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .mentor-summary {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .week-days {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-day-details {
+        grid-template-columns: 1fr;
+      }
+
+      .criteria-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .journey::before {
+        left: 22px;
+      }
+
+      .journey-week {
+        padding-left: 72px;
+      }
+
+      .journey-marker {
+        left: 4px;
+        width: 36px;
+        height: 36px;
+      }
+
+      .journey-card-header {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .journey-card-body {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: clamp(2.25rem, 10vw, 4rem);
+      }
+
+      .pipeline-step {
+        min-width: auto;
+      }
+
+      .shift-compare {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-week {
+        padding-left: 56px;
+      }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .hero-tagline,
+      .hero-subtitle,
+      .hero-buttons {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ===== FOCUS STYLES ===== */
+    *:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav aria-label="Main navigation">
+    <div class="container">
+      <a href="#hero" class="nav-logo">ID<span>345</span></a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#thesis">Thesis</a></li>
+        <li><a href="#mentors">Mentors</a></li>
+        <li><a href="#rhythm">Schedule</a></li>
+        <li><a href="#program">6 Weeks</a></li>
+        <li><a href="#criteria">Criteria</a></li>
+        <li><a href="#" class="nav-cta">Apply</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== -->
+  <!-- 1. HERO              -->
+  <!-- ==================== -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title" id="heroTitle" aria-label="ID345 Accelerator"></h1>
+      <p class="hero-tagline" id="heroTagline">We build together.</p>
+      <p class="hero-subtitle" id="heroSubtitle">Colorado's First AI Accelerator</p>
+      <div class="hero-buttons" id="heroButtons">
+        <a href="#overview" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="scan-divider" aria-hidden="true"></div>
+
+  <!-- ==================== -->
+  <!-- 2. PROGRAM OVERVIEW  -->
+  <!-- ==================== -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="container">
+      <span class="section-label reveal">Program Overview</span>
+      <h2 id="overview-heading" class="section-heading reveal reveal-delay-1">Born from a Community of <span class="highlight">Builders</span></h2>
+
+      <div class="overview-story reveal reveal-delay-2">
+        <p>ID345 started as a Wednesday night meetup in Denver -- a room full of people who wanted to build things with AI. Not just talk about it. Build. Every week, that room got fuller. Coders showed up alongside artists, startup founders sat next to people who had never written a line of code, and something remarkable happened: they started helping each other ship real products.</p>
+        <p>That community now spans 3+ chapters, with sessions alternating between AI coding and AI generative media and art. We have watched members go from "I have an idea" to "I have paying customers" in weeks. ID345 Accelerator exists to give that next step to the builders who are ready for it.</p>
+      </div>
+
+      <!-- Three differentiators -->
+      <div class="diff-grid">
+        <div class="diff-card reveal">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Community, Not Capital</h3>
+          <p>Our cohort members are not strangers cold-applying to a program. They are builders we have watched grow, validated by real peers, pressure-tested in real sessions.</p>
+        </div>
+        <div class="diff-card reveal reveal-delay-1">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Non-Traditional Founders</h3>
+          <p>Some of our most impressive builders have never written traditional code. AI has changed who gets to be a founder, and our program reflects that.</p>
+        </div>
+        <div class="diff-card reveal reveal-delay-2">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+              <line x1="4" y1="22" x2="4" y2="15"/>
+            </svg>
+          </div>
+          <h3>We Build Together</h3>
+          <p>This is not a program where you disappear into a Zoom room for six weeks. The ID345 community -- mentors, alumni, fellow builders -- stays with you before, during, and after.</p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="3" data-suffix="+">0</div>
+          <div class="stat-label">Chapters</div>
+          <div class="stat-sublabel">and growing</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-number" data-target="10" data-suffix="-15">0</div>
+          <div class="stat-label">Companies</div>
+          <div class="stat-sublabel">per cohort</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-number" data-target="6" data-suffix="">0</div>
+          <div class="stat-label">Weeks</div>
+          <div class="stat-sublabel">idea to Demo Day</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-number" data-text="Hybrid">H</div>
+          <div class="stat-label">Format</div>
+          <div class="stat-sublabel">remote + weekly in-person</div>
+        </div>
+      </div>
+
+      <!-- Director note -->
+      <div class="director-note reveal">
+        <p>The program is led by a director with <strong>15 years of global accelerator experience</strong> and an early-stage VC background. This is not our first accelerator. But it is Colorado's first AI accelerator, and we are building it the way we build everything here: <strong>together, with the community, one honest step at a time.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="retro-divider" aria-hidden="true"><div class="retro-divider-dot"></div></div>
+
+  <!-- ==================== -->
+  <!-- 3. INVESTMENT THESIS  -->
+  <!-- ==================== -->
+  <section id="thesis" aria-labelledby="thesis-heading">
+    <div class="container">
+      <span class="section-label reveal">Investment Thesis</span>
+      <h2 id="thesis-heading" class="section-heading reveal reveal-delay-1">A New Era of <span class="highlight">Founders</span></h2>
+
+      <div class="thesis-layout">
+        <div class="thesis-text">
+          <p class="reveal reveal-delay-2">The next wave of fundable startups will not come from Stanford CS programs. They will come from communities like ID345.</p>
+          <p class="reveal reveal-delay-2">AI development tools have collapsed the cost and complexity of building a first product. A solo founder with domain expertise and a clear customer pain point can now ship a working prototype in days, not months. The barrier to entry is no longer technical skill. It is clarity of problem, speed of execution, and willingness to iterate.</p>
+          <p class="reveal reveal-delay-3">This shift has created a new class of founder: people who deeply understand a market because they have lived in it, and who can now build for that market directly. Teachers building ed-tech. Healthcare workers building patient tools. Creatives building production workflows.</p>
+          <p class="reveal reveal-delay-3">Colorado is underserved in AI startup infrastructure compared to coastal hubs, but it has the talent, the cost advantages, and now the community to support a serious pipeline. ID345 Accelerator is how that pipeline gets built.</p>
+        </div>
+
+        <!-- Visual: Old vs New -->
+        <div class="shift-compare reveal reveal-delay-2">
+          <div class="shift-box old">
+            <span class="shift-label">Traditional Model</span>
+            <h4>The Old Founder</h4>
+            <ul>
+              <li>CS degree required</li>
+              <li>Months to build an MVP</li>
+              <li>Capital-intensive development</li>
+              <li>Technical skill is the barrier</li>
+              <li>Research-based market insight</li>
+            </ul>
+          </div>
+          <div class="shift-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <polyline points="19 12 12 19 5 12"/>
+            </svg>
+          </div>
+          <div class="shift-box new">
+            <span class="shift-label">AI-Era Model</span>
+            <h4>The New Founder</h4>
+            <ul>
+              <li>Domain expertise is the edge</li>
+              <li>Working prototype in days</li>
+              <li>AI tools collapse complexity</li>
+              <li>Clarity of problem is the barrier</li>
+              <li>Lived-experience market insight</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pipeline diagram -->
+      <div class="pipeline reveal">
+        <div class="pipeline-step">
+          <div class="pipeline-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b7355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="pipeline-name">Community</div>
+          <div class="pipeline-desc">Wednesday meetups, real building</div>
+        </div>
+        <div class="pipeline-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e85d3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="pipeline-name">Validated Builders</div>
+          <div class="pipeline-desc">Peer-tested consistency</div>
+        </div>
+        <div class="pipeline-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="pipeline-name">Accelerator</div>
+          <div class="pipeline-desc">6 weeks of intensive growth</div>
+        </div>
+        <div class="pipeline-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="pipeline-name">Fundable Startups</div>
+          <div class="pipeline-desc">Investor-ready on Demo Day</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scan-divider" aria-hidden="true"></div>
+
+  <!-- ==================== -->
+  <!-- 4. THE MENTOR NETWORK -->
+  <!-- ==================== -->
+  <section id="mentors" aria-labelledby="mentors-heading">
+    <div class="container">
+      <span class="section-label reveal">The Mentor Network</span>
+      <h2 id="mentors-heading" class="section-heading reveal reveal-delay-1">A Support System Around <span class="highlight">Every Startup</span></h2>
+
+      <div class="mentor-intro reveal reveal-delay-2">
+        <p>Every startup in the cohort is assigned a dedicated mentor from the ID345 community -- experienced builders, founders, and professionals who understand the AI-era founder journey. This is not optional coaching. It is structured accountability.</p>
+      </div>
+
+      <!-- Visual hub-and-spoke diagram (desktop only) -->
+      <div class="mentor-diagram reveal reveal-delay-2" aria-label="Diagram showing the startup at the center surrounded by support layers: assigned mentor, program directors, specialist mentors, founder stories, and mentor-director sync">
+        <div class="mentor-ring-outer"></div>
+        <div class="mentor-ring"></div>
+
+        <svg class="mentor-lines" viewBox="0 0 700 480" fill="none" aria-hidden="true">
+          <!-- Lines from center to nodes -->
+          <line x1="350" y1="240" x2="350" y2="40" stroke="#ff9500" stroke-width="1" stroke-dasharray="4 4" opacity="0.2"/>
+          <line x1="350" y1="240" x2="620" y2="240" stroke="#e85d3a" stroke-width="1" stroke-dasharray="4 4" opacity="0.2"/>
+          <line x1="350" y1="240" x2="350" y2="440" stroke="#4ade80" stroke-width="1" stroke-dasharray="4 4" opacity="0.2"/>
+          <line x1="350" y1="240" x2="80" y2="240" stroke="#ffd700" stroke-width="1" stroke-dasharray="4 4" opacity="0.2"/>
+          <line x1="350" y1="240" x2="570" y2="80" stroke="#8b7355" stroke-width="1" stroke-dasharray="4 4" opacity="0.2"/>
+        </svg>
+
+        <!-- Center hub -->
+        <div class="mentor-hub">
+          <div class="mentor-hub-label">Your Startup</div>
+          <div class="mentor-hub-sub">At the Center</div>
+        </div>
+
+        <!-- Assigned Mentor (top) -->
+        <div class="mentor-node pos-top">
+          <div class="mentor-node-dot" style="border-color: var(--primary); background: rgba(255,149,0,0.1);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="mentor-node-title">Assigned Mentor</div>
+          <div class="mentor-node-freq">2x / week</div>
+        </div>
+
+        <!-- Specialist Mentors (right) -->
+        <div class="mentor-node pos-right">
+          <div class="mentor-node-dot" style="border-color: var(--secondary); background: rgba(232,93,58,0.1);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e85d3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="mentor-node-title">Specialist Mentors</div>
+          <div class="mentor-node-freq">Tue or Thu</div>
+        </div>
+
+        <!-- Founder Stories (bottom) -->
+        <div class="mentor-node pos-bottom">
+          <div class="mentor-node-dot" style="border-color: var(--success); background: rgba(74,222,128,0.1);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="mentor-node-title">Founder Stories</div>
+          <div class="mentor-node-freq">Friday PM</div>
+        </div>
+
+        <!-- Director 1-on-1 (left) -->
+        <div class="mentor-node pos-left">
+          <div class="mentor-node-dot" style="border-color: var(--accent); background: rgba(255,215,0,0.1);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div class="mentor-node-title">Director 1-on-1</div>
+          <div class="mentor-node-freq">Monday, 30 min</div>
+        </div>
+
+        <!-- Mentor-Director Sync (top right) -->
+        <div class="mentor-node pos-top-right">
+          <div class="mentor-node-dot" style="border-color: var(--neutral-500); background: rgba(139,115,85,0.1);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b7355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="mentor-node-title">Mentor-Director Sync</div>
+          <div class="mentor-node-freq">Friday</div>
+        </div>
+      </div>
+
+      <!-- Summary stats -->
+      <div class="mentor-summary">
+        <div class="mentor-summary-card reveal">
+          <div class="mentor-summary-value">3+</div>
+          <div class="mentor-summary-label">Dedicated support conversations per startup, per week (minimum)</div>
+        </div>
+        <div class="mentor-summary-card reveal reveal-delay-1">
+          <div class="mentor-summary-value">2x</div>
+          <div class="mentor-summary-label">Weekly check-ins with your assigned community mentor</div>
+        </div>
+        <div class="mentor-summary-card reveal reveal-delay-2">
+          <div class="mentor-summary-value">30m</div>
+          <div class="mentor-summary-label">Weekly 1-on-1 with program directors every Monday</div>
+        </div>
+      </div>
+
+      <!-- Mentor detail cards -->
+      <div class="mentor-details">
+        <div class="mentor-detail-card reveal">
+          <div class="mentor-detail-icon" style="background: rgba(255,149,0,0.08); border: 1px solid rgba(255,149,0,0.15);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Assigned Community Mentor</h4>
+            <p>Experienced builder from the ID345 community. 2 touchpoints per week on the mentor's schedule -- virtual or in-person, formal or informal.</p>
+          </div>
+        </div>
+        <div class="mentor-detail-card reveal reveal-delay-1">
+          <div class="mentor-detail-icon" style="background: rgba(232,93,58,0.08); border: 1px solid rgba(232,93,58,0.15);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e85d3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Specialist Mentors</h4>
+            <p>Topic experts brought in each week for focused sessions, office hours, and deep dives aligned to that week's theme. Tuesday or Thursday, alternating.</p>
+          </div>
+        </div>
+        <div class="mentor-detail-card reveal reveal-delay-2">
+          <div class="mentor-detail-icon" style="background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.15);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Founder Stories</h4>
+            <p>Friday afternoon sessions where guest founders share their journey from idea to launch. What they wish they knew. Q&A with the cohort.</p>
+          </div>
+        </div>
+        <div class="mentor-detail-card reveal reveal-delay-3">
+          <div class="mentor-detail-icon" style="background: rgba(139,115,85,0.08); border: 1px solid rgba(139,115,85,0.15);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b7355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Mentor-Director Sync</h4>
+            <p>Every Friday, mentors meet with program directors to discuss startup progress, flag concerns, and coordinate support. No startup falls through the cracks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="retro-divider" aria-hidden="true"><div class="retro-divider-dot"></div></div>
+
+  <!-- ==================== -->
+  <!-- 5. THE WEEKLY RHYTHM  -->
+  <!-- ==================== -->
+  <section id="rhythm" aria-labelledby="rhythm-heading">
+    <div class="container">
+      <div class="rhythm-header">
+        <span class="section-label reveal">The Weekly Rhythm</span>
+        <h2 id="rhythm-heading" class="section-heading reveal reveal-delay-1">A Consistent <span class="highlight">Cadence</span></h2>
+        <p class="reveal reveal-delay-2">Every week follows the same core structure so founders can build a rhythm. The content and focus changes each week, but the cadence stays consistent.</p>
+      </div>
+
+      <!-- Visual weekly calendar -->
+      <div class="weekly-calendar reveal reveal-delay-2">
+        <!-- Monday -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <div class="cal-day-name">Monday</div>
+          </div>
+          <div class="cal-day-body">
+            <div class="cal-event director">
+              <div class="cal-event-title">Director 1-on-1s</div>
+              <div class="cal-event-desc">30-min sessions with program directors and staff</div>
+              <span class="cal-event-time">In-person or virtual</span>
+            </div>
+            <div class="cal-event social">
+              <div class="cal-event-title">Founder Lunch</div>
+              <div class="cal-event-desc">Self-organized, encouraged weekly</div>
+              <span class="cal-event-time">In-person</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tuesday -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <div class="cal-day-name">Tuesday</div>
+          </div>
+          <div class="cal-day-body">
+            <div class="cal-event specialist">
+              <div class="cal-event-title">Specialist Mentors</div>
+              <div class="cal-event-desc">Topic-expert sessions, office hours, deep dives</div>
+              <span class="cal-event-time">Alternating weeks / In-person</span>
+            </div>
+            <div class="cal-event mentor-checkin">
+              <div class="cal-event-title">Mentor Check-in</div>
+              <div class="cal-event-desc">Assigned mentor touchpoint</div>
+              <span class="cal-event-time">Mentor's schedule</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wednesday -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <div class="cal-day-name">Wednesday</div>
+          </div>
+          <div class="cal-day-body">
+            <div class="cal-event community">
+              <div class="cal-event-title">Community Event</div>
+              <div class="cal-event-desc">Pitch practice and demos at the ID345 space. Public-facing.</div>
+              <span class="cal-event-time">In-person at ID345</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thursday -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <div class="cal-day-name">Thursday</div>
+          </div>
+          <div class="cal-day-body">
+            <div class="cal-event specialist">
+              <div class="cal-event-title">Specialist Mentors</div>
+              <div class="cal-event-desc">Topic-expert sessions (alternating with Tuesday)</div>
+              <span class="cal-event-time">Alternating weeks / In-person</span>
+            </div>
+            <div class="cal-event mentor-checkin">
+              <div class="cal-event-title">Mentor Check-in</div>
+              <div class="cal-event-desc">Assigned mentor touchpoint</div>
+              <span class="cal-event-time">Mentor's schedule</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <div class="cal-day-name">Friday</div>
+          </div>
+          <div class="cal-day-body">
+            <div class="cal-event stories">
+              <div class="cal-event-title">Founder Stories</div>
+              <div class="cal-event-desc">Guest founders share their journey. Q&A with cohort.</div>
+              <span class="cal-event-time">Afternoon / In-person or virtual</span>
+            </div>
+            <div class="cal-event sync">
+              <div class="cal-event-title">Mentor-Director Sync</div>
+              <div class="cal-event-desc">Progress review, flag concerns, coordinate support</div>
+              <span class="cal-event-time">Virtual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ongoing bar -->
+      <div class="cal-ongoing reveal reveal-delay-3">
+        <div class="cal-ongoing-label">Ongoing</div>
+        <div class="cal-ongoing-desc">Assigned mentor check-ins: 2 touchpoints per week minimum, on the mentor's schedule (virtual or in-person, formal or informal)</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scan-divider" aria-hidden="true"></div>
+
+  <!-- ==================== -->
+  <!-- 6. SIX-WEEK PROGRAM   -->
+  <!-- ==================== -->
+  <section id="program" aria-labelledby="program-heading">
+    <div class="container">
+      <div class="program-header">
+        <span class="section-label reveal">The Six-Week Journey</span>
+        <h2 id="program-heading" class="section-heading reveal reveal-delay-1">From Idea to <span class="highlight">Demo Day</span></h2>
+        <p class="reveal reveal-delay-2">Each week builds on the last. The cadence is consistent, but the focus intensifies as you progress toward launch.</p>
+      </div>
+
+      <div class="journey">
+        <!-- WEEK 1 -->
+        <div class="journey-week reveal">
+          <div class="journey-marker"><span class="journey-marker-num">1</span></div>
+          <div class="journey-card">
+            <div class="journey-card-header">
+              <span class="journey-week-label">Week 1</span>
+              <span class="journey-week-title">Foundation and Vision</span>
+              <span class="journey-week-theme">"Who are you building for and why?"</span>
+            </div>
+            <div class="journey-card-body">
+              <p>Founders lock in their problem statement, define their target customer, and present their current product state to the cohort. This week establishes a shared baseline and identifies the biggest gaps to close in the next five weeks.</p>
+              <div class="week-days">
+                <div class="week-day mon">
+                  <span class="week-day-name">Monday</span>
+                  <span class="week-day-activity">1-on-1 kickoff meetings. Directors assess current state, set initial goals, align on Demo Day success.</span>
+                </div>
+                <div class="week-day tue-thu">
+                  <span class="week-day-name">Tuesday</span>
+                  <span class="week-day-activity">Specialist session on problem definition and customer discovery frameworks.</span>
+                </div>
+                <div class="week-day wed">
+                  <span class="week-day-name">Wednesday</span>
+                  <span class="week-day-activity">Community event. Each startup gives a 2-minute introduction. First public practice.</span>
+                </div>
+                <div class="week-day fri">
+                  <span class="week-day-name">Friday</span>
+                  <span class="week-day-activity">Founder Stories -- a guest founder shares their journey from idea to launch.</span>
+                </div>
+              </div>
+              <div class="mentor-focus">
+                <span class="mentor-focus-label">Mentor Focus</span>
+                <p>Getting to know the startup, understanding the founder's vision, and identifying the biggest risks early.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div class="journey-week reveal">
+          <div class="journey-marker"><span class="journey-marker-num">2</span></div>
+          <div class="journey-card">
+            <div class="journey-card-header">
+              <span class="journey-week-label">Week 2</span>
+              <span class="journey-week-title">Product and Build Sprint</span>
+              <span class="journey-week-theme">"Stop talking. Start building."</span>
+            </div>
+            <div class="journey-card-body">
+              <p>Intensive building week focused on getting to a working prototype or significantly improving an existing one. Structured feedback sessions from mentors and peers on usability, technical approach, and scope.</p>
+              <div class="week-days">
+                <div class="week-day mon">
+                  <span class="week-day-name">Monday</span>
+                  <span class="week-day-activity">1-on-1s focused on build priorities. Directors help scope what founders can realistically ship by Friday.</span>
+                </div>
+                <div class="week-day tue-thu">
+                  <span class="week-day-name">Thursday</span>
+                  <span class="week-day-activity">Specialist session on product development, technical architecture, and AI implementation patterns.</span>
+                </div>
+                <div class="week-day wed">
+                  <span class="week-day-name">Wednesday</span>
+                  <span class="week-day-activity">Community event. Startups show what they have built so far -- even if rough. Community feedback.</span>
+                </div>
+                <div class="week-day fri">
+                  <span class="week-day-name">Friday</span>
+                  <span class="week-day-activity">Founder Stories. Mentor-director sync reviews build progress across the cohort.</span>
+                </div>
+              </div>
+              <div class="mentor-focus">
+                <span class="mentor-focus-label">Mentor Focus</span>
+                <p>Technical guidance, scope management, and keeping founders focused on the minimum viable product.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 3 -->
+        <div class="journey-week reveal">
+          <div class="journey-marker"><span class="journey-marker-num">3</span></div>
+          <div class="journey-card">
+            <div class="journey-card-header">
+              <span class="journey-week-label">Week 3</span>
+              <span class="journey-week-title">Customer and Market Validation</span>
+              <span class="journey-week-theme">"Get out of the building."</span>
+            </div>
+            <div class="journey-card-body">
+              <p>Founders are pushed to talk to real customers. This week is dedicated to customer discovery conversations, market sizing exercises, and stress-testing assumptions -- with the goal of having real user or customer feedback by Friday.</p>
+              <div class="week-days">
+                <div class="week-day mon">
+                  <span class="week-day-name">Monday</span>
+                  <span class="week-day-activity">1-on-1s review customer outreach plans. Who are you talking to? How many? What to learn?</span>
+                </div>
+                <div class="week-day tue-thu">
+                  <span class="week-day-name">Tuesday</span>
+                  <span class="week-day-activity">Specialist session on market research methods, customer interview techniques, validation frameworks.</span>
+                </div>
+                <div class="week-day wed">
+                  <span class="week-day-name">Wednesday</span>
+                  <span class="week-day-activity">Community event. Startups share what they learned from customers. Raw feedback, surprises, pivots.</span>
+                </div>
+                <div class="week-day fri">
+                  <span class="week-day-name">Friday</span>
+                  <span class="week-day-activity">Founder Stories. Mentor-director sync focuses on validation results and potential pivots.</span>
+                </div>
+              </div>
+              <div class="mentor-focus">
+                <span class="mentor-focus-label">Mentor Focus</span>
+                <p>Helping founders design good customer conversations, interpreting feedback, and deciding what to act on.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 4 -->
+        <div class="journey-week reveal">
+          <div class="journey-marker"><span class="journey-marker-num">4</span></div>
+          <div class="journey-card">
+            <div class="journey-card-header">
+              <span class="journey-week-label">Week 4</span>
+              <span class="journey-week-title">Business Model and Go-to-Market</span>
+              <span class="journey-week-theme">"How does this become a business?"</span>
+            </div>
+            <div class="journey-card-body">
+              <p>Shift from "what are we building" to "how does this make money." Founders define revenue models, pricing strategies, acquisition channels, and unit economics.</p>
+              <div class="week-days">
+                <div class="week-day mon">
+                  <span class="week-day-name">Monday</span>
+                  <span class="week-day-activity">1-on-1s focused on business model clarity. Directors pressure-test revenue assumptions.</span>
+                </div>
+                <div class="week-day tue-thu">
+                  <span class="week-day-name">Thursday</span>
+                  <span class="week-day-activity">Specialist session on financial modeling, pricing strategy, and unit economics. Hands-on workshop.</span>
+                </div>
+                <div class="week-day wed">
+                  <span class="week-day-name">Wednesday</span>
+                  <span class="week-day-activity">Community event. Startups pitch their business model. Community asks hard questions about revenue.</span>
+                </div>
+                <div class="week-day fri">
+                  <span class="week-day-name">Friday</span>
+                  <span class="week-day-activity">Founder Stories -- a founder who struggled with monetization shares their path. Mentor-director sync.</span>
+                </div>
+              </div>
+              <div class="mentor-focus">
+                <span class="mentor-focus-label">Mentor Focus</span>
+                <p>Financial reality checks, helping founders think about pricing, and connecting them with potential customers or channels.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 5 -->
+        <div class="journey-week reveal">
+          <div class="journey-marker"><span class="journey-marker-num">5</span></div>
+          <div class="journey-card">
+            <div class="journey-card-header">
+              <span class="journey-week-label">Week 5</span>
+              <span class="journey-week-title">Pitch Preparation</span>
+              <span class="journey-week-theme">"Tell your story to investors."</span>
+            </div>
+            <div class="journey-card-body">
+              <p>The focus shifts to getting pitch-ready for a VC audience. This includes financials, the pitch deck, and how to network and do outreach to investors. We bring in experts for each area.</p>
+              <div class="week-days">
+                <div class="week-day mon">
+                  <span class="week-day-name">Monday</span>
+                  <span class="week-day-activity">1-on-1s focused on pitch readiness. Directors review first draft pitch decks and financial projections.</span>
+                </div>
+                <div class="week-day tue-thu">
+                  <span class="week-day-name">Tuesday</span>
+                  <span class="week-day-activity">Specialist session on pitch coaching -- structure, storytelling, handling tough investor questions.</span>
+                </div>
+                <div class="week-day wed">
+                  <span class="week-day-name">Wednesday</span>
+                  <span class="week-day-activity">Community event. Full pitch practice. Every slide, claim, and number gets pressure-tested.</span>
+                </div>
+                <div class="week-day fri">
+                  <span class="week-day-name">Friday</span>
+                  <span class="week-day-activity">Specialist session on investor outreach, networking strategy, and Demo Day follow-up. Mentor-director sync.</span>
+                </div>
+              </div>
+              <div class="mentor-focus">
+                <span class="mentor-focus-label">Mentor Focus</span>
+                <p>Intensive pitch coaching. Mentors run mock investor meetings and provide line-by-line feedback on the deck.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 6 -->
+        <div class="journey-week reveal">
+          <div class="journey-marker"><span class="journey-marker-num">6</span></div>
+          <div class="journey-card" style="border-color: rgba(255, 215, 0, 0.2);">
+            <div class="journey-card-header" style="border-bottom-color: rgba(255, 215, 0, 0.1);">
+              <span class="journey-week-label" style="background: rgba(255,215,0,0.1); color: var(--accent);">Week 6</span>
+              <span class="journey-week-title">Demo Day Preparation and Demo Day</span>
+              <span class="journey-week-theme" style="color: var(--accent);">"This is not a graduation. It is a launch."</span>
+            </div>
+            <div class="journey-card-body">
+              <p>Final polish on products and pitches. The week builds toward Demo Day -- a big in-person event at the ID345 space.</p>
+              <div class="week-days">
+                <div class="week-day mon">
+                  <span class="week-day-name">Monday</span>
+                  <span class="week-day-activity">Final 1-on-1s. Last adjustments to pitches, products, and Demo Day logistics.</span>
+                </div>
+                <div class="week-day tue-thu">
+                  <span class="week-day-name">Tue / Wed</span>
+                  <span class="week-day-activity">Dress rehearsals. Full run-throughs of the Demo Day format with timing, transitions, and AV checks.</span>
+                </div>
+                <div class="week-day wed" style="grid-column: 1 / -1;">
+                  <span class="week-day-name">Demo Day</span>
+                  <span class="week-day-activity">End of week. In-person at the ID345 space. The culmination of six weeks of building.</span>
+                </div>
+              </div>
+
+              <!-- Demo Day details -->
+              <div class="demo-day-card">
+                <h4>Demo Day</h4>
+                <div class="demo-day-details">
+                  <div class="demo-detail">
+                    <div class="demo-detail-icon" aria-hidden="true"></div>
+                    <span>In-person event at the ID345 space</span>
+                  </div>
+                  <div class="demo-detail">
+                    <div class="demo-detail-icon" aria-hidden="true"></div>
+                    <span>6-minute pitch per startup followed by Q&A</span>
+                  </div>
+                  <div class="demo-detail">
+                    <div class="demo-detail-icon" aria-hidden="true"></div>
+                    <span>Open to investors, mentors, community, press, and public</span>
+                  </div>
+                  <div class="demo-detail">
+                    <div class="demo-detail-icon" aria-hidden="true"></div>
+                    <span>Networking reception after pitches</span>
+                  </div>
+                  <div class="demo-detail">
+                    <div class="demo-detail-icon" aria-hidden="true"></div>
+                    <span>Investors and mentors connect directly with founders</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mentor-focus" style="margin-top: 1rem;">
+                <span class="mentor-focus-label">Mentor Focus</span>
+                <p>Final prep and moral support. Mentors attend Demo Day and are available for introductions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="retro-divider" aria-hidden="true"><div class="retro-divider-dot"></div></div>
+
+  <!-- ==================== -->
+  <!-- 7. SELECTION CRITERIA  -->
+  <!-- ==================== -->
+  <section id="criteria" aria-labelledby="criteria-heading">
+    <div class="container">
+      <div class="criteria-header">
+        <span class="section-label reveal">Selection Criteria</span>
+        <h2 id="criteria-heading" class="section-heading reveal reveal-delay-1">What We <span class="highlight">Look For</span></h2>
+      </div>
+
+      <div class="criteria-grid">
+        <!-- 1. Problem Clarity -->
+        <div class="criteria-card reveal">
+          <div class="criteria-num">01</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3>Problem Clarity</h3>
+          <p>You can explain the problem you are solving in plain language. It is a real problem that real people or businesses have right now. You have direct experience with or deep understanding of the problem space.</p>
+        </div>
+
+        <!-- 2. Builder Mindset -->
+        <div class="criteria-card reveal reveal-delay-1">
+          <div class="criteria-num">02</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Builder Mindset</h3>
+          <p>You have already started building something -- it does not need to be polished, but it needs to exist beyond an idea. You ship. You iterate. You do not wait for permission to start.</p>
+        </div>
+
+        <!-- 3. Coachability -->
+        <div class="criteria-card reveal reveal-delay-2">
+          <div class="criteria-num">03</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3>Coachability</h3>
+          <p>You actively seek feedback and do something with it. You are comfortable saying "I do not know" and then going to find the answer. You can disagree respectfully and change your mind when the evidence warrants it.</p>
+        </div>
+
+        <!-- 4. Speed & Adaptability -->
+        <div class="criteria-card reveal reveal-delay-3">
+          <div class="criteria-num">04</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3>Speed and Adaptability</h3>
+          <p>You can learn new tools quickly and are not intimidated by unfamiliar territory. You have demonstrated the ability to make meaningful progress in short time frames.</p>
+        </div>
+
+        <!-- 5. Business Awareness -->
+        <div class="criteria-card reveal reveal-delay-1">
+          <div class="criteria-num">05</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Business Awareness</h3>
+          <p>You understand (or are actively working to understand) who pays for your product, why they pay, and how you reach them. You think about your market, not just your product.</p>
+        </div>
+
+        <!-- 6. AI-Native Approach -->
+        <div class="criteria-card reveal reveal-delay-2">
+          <div class="criteria-num">06</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <line x1="9" y1="1" x2="9" y2="4"/>
+              <line x1="15" y1="1" x2="15" y2="4"/>
+              <line x1="9" y1="20" x2="9" y2="23"/>
+              <line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9" x2="23" y2="9"/>
+              <line x1="20" y1="14" x2="23" y2="14"/>
+              <line x1="1" y1="9" x2="4" y2="9"/>
+              <line x1="1" y1="14" x2="4" y2="14"/>
+            </svg>
+          </div>
+          <h3>AI-Native Approach</h3>
+          <p>Your product leverages AI in a meaningful way -- not as a label, but as a core part of how it works. You are building with modern AI tools, whether writing code, using no-code platforms, or combining both.</p>
+        </div>
+
+        <!-- 7. Team & Commitment -->
+        <div class="criteria-card reveal reveal-delay-3">
+          <div class="criteria-num">07</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Team and Commitment</h3>
+          <p>Solo founders are welcome. Teams are welcome. What matters is that the people involved are fully committed for 6 weeks and can attend weekly in-person sessions and Demo Day.</p>
+        </div>
+
+        <!-- 8. Community Fit -->
+        <div class="criteria-card reveal reveal-delay-4">
+          <div class="criteria-num">08</div>
+          <div class="criteria-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Community Fit</h3>
+          <p>You treat other builders with respect and generosity. You are willing to help others in the cohort. You understand that "we build together" is not a slogan -- it is how this works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- 8. FOOTER             -->
+  <!-- ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">ID<span>345</span> Accelerator</div>
+        <div class="footer-tagline">We build together.</div>
+        <div class="footer-location">Denver, CO</div>
+      </div>
+      <div class="footer-bottom">
+        <p>2026 ID345 Accelerator</p>
+        <span class="footer-badge">Colorado's First AI Accelerator</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===========================
+       TYPING ANIMATION
+    =========================== */
+    (function initTyping() {
+      var el = document.getElementById('heroTitle');
+      var text = 'ID345 ACCELERATOR';
+      var i = 0;
+
+      var cursor = document.createElement('span');
+      cursor.className = 'typing-cursor';
+      cursor.setAttribute('aria-hidden', 'true');
+      el.appendChild(cursor);
+
+      function type() {
+        if (i < text.length) {
+          el.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+          i++;
+          setTimeout(type, 70 + Math.random() * 40);
+        } else {
+          document.getElementById('heroTagline').classList.add('visible');
+          document.getElementById('heroSubtitle').classList.add('visible');
+          document.getElementById('heroButtons').classList.add('visible');
+          setTimeout(function() {
+            cursor.style.animation = 'none';
+            cursor.style.opacity = '0';
+            cursor.style.transition = 'opacity 0.5s ease';
+          }, 2500);
+        }
+      }
+
+      setTimeout(type, 600);
+    })();
+
+    /* ===========================
+       NAV SCROLL EFFECT
+    =========================== */
+    (function initNavScroll() {
+      var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }, { passive: true });
+    })();
+
+    /* ===========================
+       MOBILE NAV TOGGLE
+    =========================== */
+    (function initMobileNav() {
+      var toggle = document.getElementById('mobileToggle');
+      var links = document.getElementById('navLinks');
+
+      toggle.addEventListener('click', function() {
+        var isOpen = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      links.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    /* ===========================
+       SCROLL REVEAL (IntersectionObserver)
+    =========================== */
+    (function initReveal() {
+      var reveals = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        reveals.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      reveals.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ===========================
+       ANIMATED COUNTERS
+    =========================== */
+    (function initCounters() {
+      var counters = document.querySelectorAll('.stat-number');
+      if (!('IntersectionObserver' in window)) {
+        counters.forEach(function(el) {
+          var target = el.getAttribute('data-target');
+          var suffix = el.getAttribute('data-suffix') || '';
+          var text = el.getAttribute('data-text');
+          el.textContent = text || (target + suffix);
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function(el) {
+        observer.observe(el);
+      });
+
+      function animateCounter(el) {
+        var textVal = el.getAttribute('data-text');
+        if (textVal) {
+          el.textContent = '';
+          var ci = 0;
+          function addLetter() {
+            if (ci < textVal.length) {
+              el.textContent += textVal.charAt(ci);
+              ci++;
+              setTimeout(addLetter, 80);
+            }
+          }
+          addLetter();
+          return;
+        }
+
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1200;
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+    })();
+
+    /* ===========================
+       SMOOTH SCROLL FOR ANCHOR LINKS
+    =========================== */
+    (function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            var navHeight = document.querySelector('nav').offsetHeight;
+            var targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
