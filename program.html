@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID345 Accelerator — Program Document</title>
+  <meta name="description" content="ID345 Accelerator program document. Colorado's first AI accelerator — a 6-week program for AI-era founders. We build together.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #1a1410;
+      --card-bg: #241e17;
+      --surface: #2e261d;
+      --primary: #ff9500;
+      --secondary: #e85d3a;
+      --accent: #ffd700;
+      --text: #f5e6d3;
+      --text-muted: #c4a882;
+      --neutral-500: #8b7355;
+      --neutral-700: #4a3c2e;
+      --success: #4ade80;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --sidebar-width: 260px;
+      --header-height: 56px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== HEADER ===== */
+    .doc-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--header-height);
+      background: rgba(26, 20, 16, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--neutral-700);
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .header-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .header-logo span {
+      color: var(--primary);
+    }
+
+    .header-sep {
+      width: 1px;
+      height: 20px;
+      background: var(--neutral-700);
+    }
+
+    .header-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .header-link {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .header-link:hover,
+    .header-link:focus-visible {
+      color: var(--primary);
+    }
+
+    .header-link--download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .header-link--download svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== LAYOUT ===== */
+    .doc-layout {
+      display: flex;
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    /* ===== SIDEBAR / TABLE OF CONTENTS ===== */
+    .doc-sidebar {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: var(--sidebar-width);
+      height: calc(100vh - var(--header-height));
+      overflow-y: auto;
+      padding: 1.5rem 1.25rem;
+      border-right: 1px solid var(--neutral-700);
+      background: var(--bg);
+      z-index: 50;
+    }
+
+    .doc-sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .doc-sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .doc-sidebar::-webkit-scrollbar-thumb {
+      background: var(--neutral-700);
+      border-radius: 4px;
+    }
+
+    .toc-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--neutral-500);
+      margin-bottom: 1rem;
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-list li {
+      margin-bottom: 0.125rem;
+    }
+
+    .toc-link {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.35rem 0.625rem;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .toc-link:hover,
+    .toc-link:focus-visible {
+      color: var(--text);
+      background: rgba(255, 149, 0, 0.06);
+    }
+
+    .toc-link.active {
+      color: var(--primary);
+      border-left-color: var(--primary);
+      background: rgba(255, 149, 0, 0.08);
+    }
+
+    .toc-link--sub {
+      font-size: 0.76rem;
+      padding-left: 1.25rem;
+      color: var(--neutral-500);
+      font-weight: 400;
+    }
+
+    .toc-link--sub:hover,
+    .toc-link--sub:focus-visible {
+      color: var(--text-muted);
+    }
+
+    .toc-link--sub.active {
+      color: var(--primary);
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .doc-main {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 2.5rem 3rem 6rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .doc-content {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* ===== METADATA BAR ===== */
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.875rem 1.25rem;
+      background: var(--card-bg);
+      border: 1px solid var(--neutral-700);
+      border-radius: 8px;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .doc-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .doc-meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--neutral-500);
+    }
+
+    .doc-meta-value {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .doc-meta-value--status {
+      color: var(--success);
+    }
+
+    .doc-meta-value--tagline {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .doc-meta-sep {
+      width: 1px;
+      height: 16px;
+      background: var(--neutral-700);
+    }
+
+    /* ===== DOCUMENT TITLE ===== */
+    .doc-title {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .doc-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    /* ===== SECTION HEADINGS ===== */
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 3.5rem;
+      margin-bottom: 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--neutral-700);
+      letter-spacing: -0.01em;
+      scroll-margin-top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .section-heading:first-of-type {
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.375rem;
+    }
+
+    .sub-heading {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 2.25rem;
+      margin-bottom: 0.875rem;
+      scroll-margin-top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .sub-heading-week {
+      font-family: var(--font-heading);
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 2.75rem;
+      margin-bottom: 0.375rem;
+      scroll-margin-top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .week-theme {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--primary);
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== BODY TEXT ===== */
+    .doc-p {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.125rem;
+    }
+
+    .doc-p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .doc-lead {
+      font-size: 1.15rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    /* ===== CALLOUT / BOLD STATEMENTS ===== */
+    .doc-callout {
+      padding: 1.125rem 1.375rem;
+      background: rgba(255, 149, 0, 0.06);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .doc-callout p {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* ===== LISTS ===== */
+    .doc-list {
+      list-style: none;
+      margin-bottom: 1.25rem;
+      padding-left: 0;
+    }
+
+    .doc-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 5px;
+      height: 5px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .doc-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ===== KEY POINTS ===== */
+    .key-point {
+      margin-bottom: 1.375rem;
+    }
+
+    .key-point-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.375rem;
+    }
+
+    .key-point p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ===== CRITERIA CARDS ===== */
+    .criteria-item {
+      padding: 1.25rem 1.375rem;
+      background: var(--card-bg);
+      border: 1px solid var(--neutral-700);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .criteria-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .criteria-item .doc-list {
+      margin-bottom: 0;
+    }
+
+    .criteria-item .doc-list li {
+      font-size: 0.95rem;
+    }
+
+    /* ===== SCHEDULE TABLE ===== */
+    .schedule-table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--neutral-700);
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      font-size: 0.925rem;
+    }
+
+    .schedule-table thead {
+      background: var(--surface);
+    }
+
+    .schedule-table th {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--neutral-700);
+      font-weight: 700;
+    }
+
+    .schedule-table td {
+      padding: 0.7rem 1rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(74, 60, 46, 0.5);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .schedule-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .schedule-table tbody tr {
+      transition: background 0.15s ease;
+    }
+
+    .schedule-table tbody tr:hover {
+      background: rgba(255, 149, 0, 0.04);
+    }
+
+    .schedule-table .day-cell {
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    .schedule-table .format-cell {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--neutral-500);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== DAILY SCHEDULE (WEEKLY DETAILS) ===== */
+    .daily-item {
+      margin-bottom: 0.875rem;
+    }
+
+    .daily-label {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .daily-desc {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .mentor-focus {
+      margin-top: 1rem;
+      padding: 0.875rem 1.125rem;
+      background: rgba(255, 149, 0, 0.05);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 149, 0, 0.12);
+    }
+
+    .mentor-focus-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .mentor-focus p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neutral-700), transparent);
+      margin: 2rem 0;
+    }
+
+    /* ===== MOBILE SIDEBAR OVERLAY ===== */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 40;
+    }
+
+    .sidebar-overlay.active {
+      display: block;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .doc-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 60;
+        width: 280px;
+      }
+
+      .doc-sidebar.open {
+        transform: translateX(0);
+      }
+
+      .doc-main {
+        margin-left: 0;
+        padding: 2rem 1.5rem 4rem;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .header-link--desktop {
+        display: none;
+      }
+
+      .doc-title {
+        font-size: 1.75rem;
+      }
+
+      .section-heading {
+        font-size: 1.375rem;
+      }
+
+      .doc-meta {
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .doc-meta-sep {
+        display: none;
+      }
+
+      .doc-meta-item {
+        flex-basis: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .doc-main {
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      .doc-title {
+        font-size: 1.5rem;
+      }
+
+      .section-heading {
+        font-size: 1.25rem;
+        margin-top: 2.5rem;
+      }
+
+      .sub-heading-week {
+        font-size: 1.2rem;
+      }
+
+      .doc-p, .daily-desc {
+        font-size: 1rem;
+      }
+
+      .schedule-table {
+        font-size: 0.85rem;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --card-bg: #f8f8f8;
+        --surface: #f0f0f0;
+        --text: #111111;
+        --text-muted: #444444;
+        --neutral-500: #888888;
+        --neutral-700: #dddddd;
+      }
+
+      body {
+        background: #fff;
+        color: #111;
+        font-size: 11pt;
+      }
+
+      .doc-header,
+      .doc-sidebar,
+      .sidebar-overlay,
+      .mobile-menu-btn {
+        display: none !important;
+      }
+
+      .doc-layout {
+        display: block;
+        margin-top: 0;
+      }
+
+      .doc-main {
+        margin-left: 0;
+        padding: 0;
+      }
+
+      .doc-content {
+        max-width: 100%;
+      }
+
+      .doc-title {
+        font-size: 24pt;
+        color: #111;
+      }
+
+      .doc-subtitle {
+        color: #555;
+      }
+
+      .section-heading {
+        page-break-after: avoid;
+        border-top-color: #ddd;
+      }
+
+      .sub-heading-week {
+        page-break-after: avoid;
+      }
+
+      .criteria-item,
+      .mentor-focus {
+        break-inside: avoid;
+      }
+
+      .schedule-table-wrapper {
+        break-inside: avoid;
+      }
+
+      .doc-callout {
+        border-left-color: #888;
+        background: #f5f5f5;
+      }
+
+      .doc-callout p,
+      .doc-p strong,
+      .key-point-title,
+      .criteria-title {
+        color: #111;
+      }
+
+      .doc-p, .daily-desc, .doc-list li {
+        color: #333;
+      }
+
+      .section-number,
+      .daily-label,
+      .mentor-focus-label {
+        color: #555;
+      }
+
+      .doc-meta {
+        border-color: #ddd;
+        background: #f8f8f8;
+      }
+
+      a {
+        color: #111;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="index.html" class="header-logo">ID<span>345</span></a>
+        <div class="header-sep"></div>
+        <span class="header-label">Program Document</span>
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle table of contents">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="header-right">
+        <a href="index.html" class="header-link header-link--desktop">Back to Main Site</a>
+        <a href="docs/accelerator-content.md" download class="header-link header-link--download" title="Download as Markdown">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2v9M4.5 7.5 8 11l3.5-3.5M3 13h10"/>
+          </svg>
+          Download .md
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR OVERLAY (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+
+    <!-- SIDEBAR / TABLE OF CONTENTS -->
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Program Overview</a></li>
+        <li><a href="#thesis" class="toc-link">Investment Thesis</a></li>
+        <li><a href="#mentors" class="toc-link">The Mentor Network</a></li>
+        <li><a href="#program" class="toc-link">Six-Week Program</a></li>
+        <li><a href="#weekly-rhythm" class="toc-link toc-link--sub">Weekly Rhythm</a></li>
+        <li><a href="#week1" class="toc-link toc-link--sub">Week 1: Foundation &amp; Vision</a></li>
+        <li><a href="#week2" class="toc-link toc-link--sub">Week 2: Product &amp; Build</a></li>
+        <li><a href="#week3" class="toc-link toc-link--sub">Week 3: Customer Validation</a></li>
+        <li><a href="#week4" class="toc-link toc-link--sub">Week 4: Business Model</a></li>
+        <li><a href="#week5" class="toc-link toc-link--sub">Week 5: Pitch Preparation</a></li>
+        <li><a href="#week6" class="toc-link toc-link--sub">Week 6: Demo Day</a></li>
+        <li><a href="#criteria" class="toc-link">Selection Criteria</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="doc-main">
+      <article class="doc-content">
+
+        <!-- METADATA BAR -->
+        <div class="doc-meta">
+          <div class="doc-meta-item">
+            <span class="doc-meta-label">Date</span>
+            <span class="doc-meta-value">2026-02-19</span>
+          </div>
+          <div class="doc-meta-sep"></div>
+          <div class="doc-meta-item">
+            <span class="doc-meta-label">Status</span>
+            <span class="doc-meta-value doc-meta-value--status">Active -- Living Document</span>
+          </div>
+          <div class="doc-meta-sep"></div>
+          <div class="doc-meta-item">
+            <span class="doc-meta-label">Tagline</span>
+            <span class="doc-meta-value doc-meta-value--tagline">We build together.</span>
+          </div>
+        </div>
+
+        <!-- DOCUMENT TITLE -->
+        <h1 class="doc-title">ID345 Accelerator</h1>
+        <p class="doc-subtitle">Colorado's First AI Accelerator. Born from a Community of Builders.</p>
+
+
+        <!-- ============================================ -->
+        <!-- SECTION 1: PROGRAM OVERVIEW -->
+        <!-- ============================================ -->
+        <h2 class="section-heading" id="overview">
+          <span class="section-number">Section 01</span>
+          Program Overview
+        </h2>
+
+        <p class="doc-p">ID345 started as a Wednesday night meetup in Denver -- a room full of people who wanted to build things with AI. Not just talk about it. Build. Every week, that room got fuller. Coders showed up alongside artists, startup founders sat next to people who had never written a line of code, and something remarkable happened: they started helping each other ship real products.</p>
+
+        <p class="doc-p">That community now spans 3+ chapters, with sessions alternating between AI coding and AI generative media and art. We have watched members go from "I have an idea" to "I have paying customers" in weeks. AI has made it possible for anyone with a clear problem and the drive to solve it to build something real. What has not changed is that builders do their best work when they are not alone.</p>
+
+        <p class="doc-p">ID345 Accelerator exists to give that next step to the builders who are ready for it.</p>
+
+        <p class="doc-p">This is a 6-week program, mostly remote, with weekly in-person sessions at the ID345 space in Denver and a Demo Day finale where cohort companies present to investors, mentors, and the broader community. Each cohort is intentionally small -- 10 to 15 companies -- because we believe in depth over scale, especially in a first cohort.</p>
+
+        <p class="doc-p">What makes this different from other accelerators? Three things.</p>
+
+        <div class="doc-callout">
+          <p><strong>We come from community, not from capital.</strong> Our cohort members are not strangers cold-applying to a program. They are builders we have watched grow, validated by real peers, pressure-tested in real sessions.</p>
+        </div>
+
+        <div class="doc-callout">
+          <p><strong>We welcome non-traditional founders.</strong> Some of our most impressive builders have never written traditional code. AI has changed who gets to be a founder, and our program reflects that.</p>
+        </div>
+
+        <div class="doc-callout">
+          <p><strong>We build together.</strong> This is not a program where you disappear into a Zoom room for six weeks. The ID345 community -- mentors, alumni, fellow builders -- stays with you before, during, and after the cohort.</p>
+        </div>
+
+        <p class="doc-p">The program is led by a director with 15 years of global accelerator experience and an early-stage VC background. This is not our first accelerator. But it is Colorado's first AI accelerator, and we are building it the way we build everything here: together, with the community, one honest step at a time.</p>
+
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: INVESTMENT THESIS -->
+        <!-- ============================================ -->
+        <h2 class="section-heading" id="thesis">
+          <span class="section-number">Section 02</span>
+          Investment Thesis
+        </h2>
+
+        <div class="doc-callout">
+          <p>The next wave of fundable startups will not come from Stanford CS programs. They will come from communities like ID345.</p>
+        </div>
+
+        <p class="doc-p">Here is what has changed. AI development tools -- large language models, no-code platforms, generative frameworks -- have collapsed the cost and complexity of building a first product. A solo founder with domain expertise and a clear customer pain point can now ship a working prototype in days, not months. The barrier to entry is no longer technical skill. It is clarity of problem, speed of execution, and willingness to iterate.</p>
+
+        <p class="doc-p">This shift has created a new class of founder: people who deeply understand a market because they have lived in it, and who can now build for that market directly. Teachers building ed-tech. Healthcare workers building patient tools. Creatives building production workflows. These founders do not look like the typical accelerator applicant, but their startups are closer to product-market fit on day one because their insight is earned, not researched.</p>
+
+        <p class="doc-p">ID345 is where these founders already gather. Our community acts as a natural filter: members who show up week after week, who ship projects, who help others debug -- they have already demonstrated the consistency and drive that early-stage investors look for. Community validation is a leading indicator of founder quality.</p>
+
+        <p class="doc-p">The opportunity for early investors is straightforward: get access to a curated pipeline of AI-native startups led by founders who build fast, solve real problems, and have been pressure-tested by a community of peers before they ever pitch a fund.</p>
+
+        <p class="doc-p">Colorado is underserved in AI startup infrastructure compared to coastal hubs, but it has the talent, the cost advantages, and now the community to support a serious pipeline. ID345 Accelerator is how that pipeline gets built.</p>
+
+
+        <!-- ============================================ -->
+        <!-- SECTION 3: THE MENTOR NETWORK -->
+        <!-- ============================================ -->
+        <h2 class="section-heading" id="mentors">
+          <span class="section-number">Section 03</span>
+          The Mentor Network
+        </h2>
+
+        <h3 class="sub-heading">How Mentorship Works at ID345</h3>
+        <p class="doc-p">Every startup in the cohort is assigned a dedicated mentor from the ID345 community. These are experienced builders, founders, and professionals who have been active in our community and understand the AI-era founder journey.</p>
+
+        <h3 class="sub-heading">Mentor Commitment</h3>
+        <p class="doc-p">Each mentor is required to provide <strong>two touchpoints per week</strong> with their assigned startup. Mentors set their own schedule for these check-ins -- they can be virtual or in-person, formal or informal -- but they must happen consistently. This is not optional coaching. It is structured accountability.</p>
+
+        <p class="doc-p">On top of mentor check-ins, each startup also has a separate weekly <strong>30-minute 1-on-1 with the program directors and staff</strong>. This means every startup has at minimum three dedicated support conversations per week: two with their mentor, one with leadership.</p>
+
+        <h3 class="sub-heading">Mentor-Director Sync</h3>
+        <p class="doc-p">Every <strong>Friday</strong>, mentors meet with the program directors to discuss startup progress, flag concerns, and coordinate support. This ensures no startup falls through the cracks and that mentors have the backing they need to be effective.</p>
+
+        <h3 class="sub-heading">Specialist Mentors</h3>
+        <p class="doc-p">In addition to assigned mentors, each week we bring in <strong>specialist mentors</strong> who are experts in that week's theme. These specialists are present on <strong>Tuesday or Thursday</strong> (alternating weeks) to run focused working sessions, office hours, and deep dives on the weekly topic.</p>
+
+        <ul class="doc-list">
+          <li><strong>Week 1 specialists:</strong> Problem definition, customer discovery frameworks</li>
+          <li><strong>Week 2 specialists:</strong> Product development, technical architecture, AI implementation</li>
+          <li><strong>Week 3 specialists:</strong> Market research, customer interviews, validation methods</li>
+          <li><strong>Week 4 specialists:</strong> Business modeling, pricing strategy, unit economics</li>
+          <li><strong>Week 5 specialists:</strong> Pitch coaching, financial modeling, investor relations</li>
+          <li><strong>Week 6 specialists:</strong> Demo preparation, presentation skills, networking strategy</li>
+        </ul>
+
+
+        <!-- ============================================ -->
+        <!-- SECTION 4: SIX-WEEK PROGRAM OUTLINE -->
+        <!-- ============================================ -->
+        <h2 class="section-heading" id="program">
+          <span class="section-number">Section 04</span>
+          Six-Week Program Outline
+        </h2>
+
+        <!-- WEEKLY RHYTHM TABLE -->
+        <h3 class="sub-heading" id="weekly-rhythm">The Weekly Rhythm</h3>
+        <p class="doc-p">Every week follows the same core structure so founders can build a rhythm. The content and focus changes each week, but the cadence stays consistent:</p>
+
+        <div class="schedule-table-wrapper">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Activity</th>
+                <th>Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="day-cell">Monday</td>
+                <td>30-min 1-on-1s with directors/staff</td>
+                <td class="format-cell">In-person or virtual</td>
+              </tr>
+              <tr>
+                <td class="day-cell">Monday</td>
+                <td>Founder weekly lunch (encouraged, self-organized)</td>
+                <td class="format-cell">In-person</td>
+              </tr>
+              <tr>
+                <td class="day-cell">Tue / Thu</td>
+                <td>Specialist mentor sessions (alternating weeks)</td>
+                <td class="format-cell">In-person at the space</td>
+              </tr>
+              <tr>
+                <td class="day-cell">Wednesday</td>
+                <td>Community event -- startups pitch and demo</td>
+                <td class="format-cell">In-person at ID345</td>
+              </tr>
+              <tr>
+                <td class="day-cell">Friday PM</td>
+                <td>Founder Stories session</td>
+                <td class="format-cell">In-person or virtual</td>
+              </tr>
+              <tr>
+                <td class="day-cell">Friday</td>
+                <td>Mentor-director sync meeting</td>
+                <td class="format-cell">Virtual</td>
+              </tr>
+              <tr>
+                <td class="day-cell">Ongoing</td>
+                <td>Assigned mentor check-ins (2x per week minimum)</td>
+                <td class="format-cell">Mentor's schedule</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- WEEK 1 -->
+        <h3 class="sub-heading-week" id="week1">Week 1: Foundation and Vision</h3>
+        <p class="week-theme">Theme: Who are you building for and why?</p>
+
+        <p class="doc-p">Founders lock in their problem statement, define their target customer, and present their current product state to the cohort. This week establishes a shared baseline and identifies the biggest gaps to close in the next five weeks.</p>
+
+        <div class="daily-item">
+          <div class="daily-label">Monday</div>
+          <p class="daily-desc">1-on-1 kickoff meetings. Directors assess each startup's current state, set initial goals, and align on what success looks like by Demo Day.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Tuesday</div>
+          <p class="daily-desc">Specialist session on problem definition and customer discovery frameworks. How to articulate your problem in a way that investors, customers, and mentors immediately understand.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Wednesday</div>
+          <p class="daily-desc">Community event. Each startup gives a 2-minute introduction -- who they are, what they are building, and what problem they are solving. First public practice.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Friday</div>
+          <p class="daily-desc">Founder Stories -- a guest founder shares their journey from idea to launch. What they wish they knew at the start. Q&A with the cohort.</p>
+        </div>
+
+        <div class="mentor-focus">
+          <div class="mentor-focus-label">Mentor Focus</div>
+          <p>Getting to know the startup, understanding the founder's vision, and identifying the biggest risks early.</p>
+        </div>
+
+
+        <!-- WEEK 2 -->
+        <h3 class="sub-heading-week" id="week2">Week 2: Product and Build Sprint</h3>
+        <p class="week-theme">Theme: Stop talking. Start building.</p>
+
+        <p class="doc-p">Intensive building week focused on getting to a working prototype or significantly improving an existing one. Structured feedback sessions from mentors and peers on usability, technical approach, and scope.</p>
+
+        <div class="daily-item">
+          <div class="daily-label">Monday</div>
+          <p class="daily-desc">1-on-1s focused on build priorities. Directors help founders scope what they can realistically ship by Friday.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Thursday</div>
+          <p class="daily-desc">Specialist session on product development, technical architecture, and AI implementation patterns. Hands-on working session.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Wednesday</div>
+          <p class="daily-desc">Community event. Startups show what they have built so far -- even if it is rough. Feedback from the community on usability and direction.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Friday</div>
+          <p class="daily-desc">Founder Stories. Mentor-director sync reviews build progress across the cohort.</p>
+        </div>
+
+        <div class="mentor-focus">
+          <div class="mentor-focus-label">Mentor Focus</div>
+          <p>Technical guidance, scope management, and keeping founders focused on the minimum viable product.</p>
+        </div>
+
+
+        <!-- WEEK 3 -->
+        <h3 class="sub-heading-week" id="week3">Week 3: Customer and Market Validation</h3>
+        <p class="week-theme">Theme: Get out of the building.</p>
+
+        <p class="doc-p">Founders are pushed to talk to real customers. This week is dedicated to customer discovery conversations, market sizing exercises, and stress-testing assumptions -- with the goal of having real user or customer feedback by Friday.</p>
+
+        <div class="daily-item">
+          <div class="daily-label">Monday</div>
+          <p class="daily-desc">1-on-1s review customer outreach plans. Who are you talking to? How many conversations? What are you trying to learn?</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Tuesday</div>
+          <p class="daily-desc">Specialist session on market research methods, customer interview techniques, and validation frameworks.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Wednesday</div>
+          <p class="daily-desc">Community event. Startups share what they learned from customers this week. Raw feedback, surprises, and pivots in real time.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Friday</div>
+          <p class="daily-desc">Founder Stories. Mentor-director sync focuses on validation results and whether any startups need to pivot.</p>
+        </div>
+
+        <div class="mentor-focus">
+          <div class="mentor-focus-label">Mentor Focus</div>
+          <p>Helping founders design good customer conversations, interpreting feedback, and deciding what to act on.</p>
+        </div>
+
+
+        <!-- WEEK 4 -->
+        <h3 class="sub-heading-week" id="week4">Week 4: Business Model and Go-to-Market</h3>
+        <p class="week-theme">Theme: How does this become a business?</p>
+
+        <p class="doc-p">Shift from "what are we building" to "how does this make money." Founders define revenue models, pricing strategies, acquisition channels, and unit economics.</p>
+
+        <div class="daily-item">
+          <div class="daily-label">Monday</div>
+          <p class="daily-desc">1-on-1s focused on business model clarity. Directors pressure-test each startup's revenue assumptions.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Thursday</div>
+          <p class="daily-desc">Specialist session on financial modeling, pricing strategy, and unit economics. Hands-on workshop with templates.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Wednesday</div>
+          <p class="daily-desc">Community event. Startups pitch their business model -- not just the product. The community asks hard questions about revenue and scalability.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Friday</div>
+          <p class="daily-desc">Founder Stories -- a founder who struggled with monetization shares their path to revenue. Mentor-director sync reviews business model progress.</p>
+        </div>
+
+        <div class="mentor-focus">
+          <div class="mentor-focus-label">Mentor Focus</div>
+          <p>Financial reality checks, helping founders think about pricing, and connecting them with potential customers or distribution channels.</p>
+        </div>
+
+
+        <!-- WEEK 5 -->
+        <h3 class="sub-heading-week" id="week5">Week 5: Pitch Preparation</h3>
+        <p class="week-theme">Theme: Tell your story to investors.</p>
+
+        <p class="doc-p">The focus shifts to getting pitch-ready for a VC audience. This includes financials, the pitch deck, and how to network and do outreach to investors. We bring in experts for each area.</p>
+
+        <div class="daily-item">
+          <div class="daily-label">Monday</div>
+          <p class="daily-desc">1-on-1s focused on pitch readiness. Directors review first draft pitch decks and financial projections.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Tuesday</div>
+          <p class="daily-desc">Specialist session on pitch coaching -- structure, storytelling, and how to handle tough investor questions.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Wednesday</div>
+          <p class="daily-desc">Community event. Full pitch practice. Each startup delivers their pitch to the community and gets direct, specific feedback. Every slide, every claim, every number gets pressure-tested.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Friday</div>
+          <p class="daily-desc">Specialist session on investor outreach, networking strategy, and how to follow up after Demo Day. Mentor-director sync focuses on final pitch refinements.</p>
+        </div>
+
+        <div class="mentor-focus">
+          <div class="mentor-focus-label">Mentor Focus</div>
+          <p>Intensive pitch coaching. Mentors run mock investor meetings with their startup and provide line-by-line feedback on the deck.</p>
+        </div>
+
+
+        <!-- WEEK 6 -->
+        <h3 class="sub-heading-week" id="week6">Week 6: Demo Day Preparation and Demo Day</h3>
+        <p class="week-theme">Theme: This is not a graduation. It is a launch.</p>
+
+        <p class="doc-p">Final polish on products and pitches. The week builds toward Demo Day -- a big in-person event at the ID345 space.</p>
+
+        <div class="daily-item">
+          <div class="daily-label">Monday</div>
+          <p class="daily-desc">Final 1-on-1s. Last adjustments to pitches, products, and Demo Day logistics.</p>
+        </div>
+        <div class="daily-item">
+          <div class="daily-label">Tuesday / Wednesday</div>
+          <p class="daily-desc">Dress rehearsals. Full run-throughs of the Demo Day format with timing, transitions, and AV checks.</p>
+        </div>
+
+        <h4 class="sub-heading" style="margin-top: 1.5rem;">Demo Day</h4>
+        <ul class="doc-list">
+          <li>In-person event at the ID345 space</li>
+          <li>Open to investors, mentors, community members, press, and the public</li>
+          <li>Each startup delivers a <strong>6-minute pitch</strong> followed by Q&A</li>
+          <li>Networking reception after pitches</li>
+          <li>Investors and mentors connect directly with founders</li>
+        </ul>
+
+        <div class="mentor-focus">
+          <div class="mentor-focus-label">Mentor Focus</div>
+          <p>Final prep and moral support. Mentors attend Demo Day and are available for introductions.</p>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SECTION 5: SELECTION CRITERIA -->
+        <!-- ============================================ -->
+        <h2 class="section-heading" id="criteria">
+          <span class="section-number">Section 05</span>
+          Selection Criteria
+        </h2>
+
+        <p class="doc-p" style="margin-bottom: 1.5rem;">What we look for in applicants:</p>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Problem Clarity</div>
+          <ul class="doc-list">
+            <li>You can explain the problem you are solving in plain language, and it is a real problem that real people or businesses have right now</li>
+            <li>You have direct experience with or deep understanding of the problem space</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Builder Mindset</div>
+          <ul class="doc-list">
+            <li>You have already started building something -- it does not need to be polished, but it needs to exist beyond an idea</li>
+            <li>You ship. You iterate. You do not wait for permission to start</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Coachability</div>
+          <ul class="doc-list">
+            <li>You actively seek feedback and do something with it</li>
+            <li>You are comfortable saying "I do not know" and then going to find the answer</li>
+            <li>You can disagree respectfully and change your mind when the evidence warrants it</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Speed and Adaptability</div>
+          <ul class="doc-list">
+            <li>You can learn new tools quickly and are not intimidated by unfamiliar territory</li>
+            <li>You have demonstrated the ability to make meaningful progress in short time frames</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Business Awareness</div>
+          <ul class="doc-list">
+            <li>You understand (or are actively working to understand) who pays for your product, why they pay, and how you reach them</li>
+            <li>You think about your market, not just your product</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">AI-Native Approach</div>
+          <ul class="doc-list">
+            <li>Your product or service leverages AI in a meaningful way -- not as a label, but as a core part of how it works</li>
+            <li>You are building with modern AI tools, whether that means writing code, using no-code AI platforms, or combining both</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Team and Commitment</div>
+          <ul class="doc-list">
+            <li>Solo founders are welcome. Teams are welcome. What matters is that the people involved are fully committed for 6 weeks</li>
+            <li>You can dedicate meaningful time each week to the program, attend weekly in-person sessions, and be present for Demo Day</li>
+          </ul>
+        </div>
+
+        <div class="criteria-item">
+          <div class="criteria-title">Community Fit</div>
+          <ul class="doc-list">
+            <li>You treat other builders with respect and generosity</li>
+            <li>You are willing to help others in the cohort, not just focus on your own company</li>
+            <li>You understand that "we build together" is not a slogan -- it is how this works</li>
+          </ul>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <script>
+    // ===== MOBILE SIDEBAR TOGGLE =====
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    });
+
+    // Close sidebar when a TOC link is clicked (mobile)
+    sidebar.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          sidebar.classList.remove('open');
+          overlay.classList.remove('active');
+        }
+      });
+    });
+
+    // ===== ACTIVE TOC HIGHLIGHTING =====
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = [];
+
+    tocLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const target = document.getElementById(href.slice(1));
+        if (target) {
+          sections.push({ el: target, link: link });
+        }
+      }
+    });
+
+    function updateActiveToc() {
+      const scrollY = window.scrollY;
+      const offset = 100;
+      let current = null;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].el.offsetTop - offset <= scrollY) {
+          current = sections[i];
+          break;
+        }
+      }
+
+      tocLinks.forEach(l => l.classList.remove('active'));
+      if (current) {
+        current.link.classList.add('active');
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveToc, { passive: true });
+    updateActiveToc();
+  </script>
+
+</body>
+</html>
