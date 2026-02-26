@@ -1,6 +1,6 @@
 # ID345 Accelerator - Program Content
 
-**Date**: 2026-02-19
+**Date**: 2026-02-26
 **Status**: Active - Living Document
 **Tagline**: We build together.
 
@@ -38,6 +38,20 @@ Here is what has changed. AI development tools -- large language models, no-code
 
 This shift has created a new class of founder: people who deeply understand a market because they have lived in it, and who can now build for that market directly. Teachers building ed-tech. Healthcare workers building patient tools. Creatives building production workflows. These founders do not look like the typical accelerator applicant, but their startups are closer to product-market fit on day one because their insight is earned, not researched.
 
+### What Makes a Great Founding Team in the AI Era
+
+AI has changed what a founding team needs to look like. A dedicated development team is no longer the prerequisite it once was -- a domain expert with modern AI tools can build a working product. But domain expertise alone is not enough to build a company.
+
+The most critical gap we see in early-stage AI startups is not technical. It is go-to-market. A nurse who deeply understands hospital workflows has earned insight that no outside researcher can replicate -- but without the ability to sell, distribute, and acquire customers, that insight stays trapped in a prototype. Go-to-market strategy and sales capability are now among the most important factors in whether an AI startup succeeds or fails.
+
+The strongest founding teams combine three things:
+
+- **Domain expertise** -- deep, lived understanding of the problem and the customer
+- **Product sense** -- the ability to translate that understanding into a solution people will actually use
+- **Go-to-market capability** -- a clear plan for how the product reaches customers, and someone on the team who can execute on sales, distribution, and partnerships
+
+In the AI era, what used to require a three-person team -- domain expert, developer, business lead -- can now be covered by one or two people on the product and technical side. But the GTM function cannot be automated. The founders who succeed will be the ones who understand that building the product is only half the job. Getting it into the hands of paying customers is the other half, and that requires a different set of skills.
+
 ID345 is where these founders already gather. Our community acts as a natural filter: members who show up week after week, who ship projects, who help others debug -- they have already demonstrated the consistency and drive that early-stage investors look for. Community validation is a leading indicator of founder quality.
 
 The opportunity for early investors is straightforward: get access to a curated pipeline of AI-native startups led by founders who build fast, solve real problems, and have been pressure-tested by a community of peers before they ever pitch a fund.
@@ -46,7 +60,39 @@ Colorado is underserved in AI startup infrastructure compared to coastal hubs, b
 
 ---
 
-## 3. The Mentor Network
+## 3. Cohort Composition Strategy
+
+### Building a Deliberate Portfolio
+
+The first cohort of 10 to 15 companies is assembled intentionally. How we compose the cohort reflects our thesis about what works, what we want to learn, and how we manage risk across a small portfolio.
+
+Not every company in the cohort needs to be building an AI product. Some of the strongest opportunities come from founders who use AI as a competitive advantage in a traditional market -- not as the product itself, but as the engine that lets them move faster, serve customers better, or operate at a scale their competitors cannot match.
+
+### Three Categories of AI Startups
+
+We think about cohort companies across three categories:
+
+**AI Wrapper Companies** -- Startups built on top of existing AI models and APIs. These companies add value through user experience, workflow integration, vertical specialization, or data curation rather than through novel AI research. They ship fast and iterate quickly. The risk is defensibility. The opportunity is speed to market and direct customer value.
+
+**Deep AI Technology Companies** -- Startups building novel AI capabilities, proprietary models, or foundational infrastructure. These companies have stronger technical moats but longer development timelines, higher capital needs, and more uncertainty about product-market fit. They require founders with both deep technical skill and the ability to translate that technology into a product someone will pay for.
+
+**AI-Advantaged Companies** -- Startups that are not AI-focused in their value proposition but use AI to compete unfairly in their market. A logistics company that uses AI to optimize routing. A healthcare platform that uses AI to reduce administrative burden. A creative agency that uses AI to produce at 10x the speed of competitors. These founders are often domain experts first, and their AI advantage is a means to an end, not the end itself.
+
+### Portfolio Mix
+
+For the first cohort, we target a deliberate mix across these categories:
+
+| Category | Target Range | Rationale |
+|----------|-------------|-----------|
+| AI Wrapper Companies | 3-5 companies | Fast iteration, strong Demo Day potential, validates our speed-focused program design |
+| Deep AI Technology | 2-4 companies | Higher ceiling outcomes, tests our ability to support technically complex startups |
+| AI-Advantaged Companies | 3-5 companies | Closest to product-market fit, strongest domain expertise, validates our thesis on non-traditional founders |
+
+This is not a rigid formula. The right composition depends on the quality of applicants in each category. But going in with a framework ensures we are making intentional choices about the portfolio, not just filling seats.
+
+---
+
+## 4. The Mentor Network
 
 ### How Mentorship Works at ID345
 
@@ -75,7 +121,7 @@ In addition to assigned mentors, each week we bring in **specialist mentors** wh
 
 ---
 
-## 4. Six-Week Program Outline
+## 5. Six-Week Program Outline
 
 ### The Weekly Rhythm
 
@@ -202,7 +248,7 @@ Final polish on products and pitches. The week builds toward Demo Day -- a big i
 
 ---
 
-## 5. Selection Criteria
+## 6. Selection Criteria
 
 ### What We Look For in Applicants
 
@@ -223,9 +269,11 @@ Final polish on products and pitches. The week builds toward Demo Day -- a big i
 - You can learn new tools quickly and are not intimidated by unfamiliar territory
 - You have demonstrated the ability to make meaningful progress in short time frames
 
-**Business awareness**
+**Go-to-market awareness**
 - You understand (or are actively working to understand) who pays for your product, why they pay, and how you reach them
 - You think about your market, not just your product
+- You have a point of view on how your product gets into the hands of customers -- through direct sales, partnerships, community, content, or other channels
+- If you are a domain expert, you can articulate how your domain knowledge translates into a customer acquisition advantage
 
 **AI-native approach**
 - Your product or service leverages AI in a meaningful way -- not as a label, but as a core part of how it works

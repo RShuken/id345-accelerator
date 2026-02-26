@@ -8,12 +8,13 @@
 
 | Section | Status | Last Updated | Owner |
 |---------|--------|--------------|-------|
-| Program Overview | Draft | 2026-02-19 | Sam |
-| Investment Thesis | Draft | 2026-02-19 | Sam |
-| Mentor Network | Draft | 2026-02-19 | Sam |
-| Six-Week Program Outline | Draft | 2026-02-19 | Sam |
-| Selection Criteria | Draft | 2026-02-19 | Sam |
-| Open Questions | Open | 2026-02-19 | Sam / Eugene |
+| Program Overview | Active | 2026-02-26 | Sam |
+| Investment Thesis | Active | 2026-02-26 | Sam / Eugene |
+| Mentor Network | Active | 2026-02-26 | Sam |
+| Six-Week Program Outline | Active | 2026-02-26 | Sam |
+| Selection Criteria | Active | 2026-02-26 | Sam / Eugene |
+| Cohort Composition Strategy | Active | 2026-02-26 | Sam / Eugene |
+| Next Steps | Active | 2026-02-26 | Sam / Eugene |
 
 ---
 
@@ -21,9 +22,8 @@
 
 | Name | Role | Notes |
 |------|------|-------|
-| Sam | Program Director / Author | Primary draft author |
-| Eugene | VC Sponsor / Advisor | Reviewing and co-editing |
-| _Add additional contributors here_ | | |
+| Sam | Program Director | Program design, community, operations |
+| Eugene | VC Sponsor / Advisor | Investment thesis, selection, investor network |
 
 ---
 
@@ -31,10 +31,11 @@
 
 1. [Program Overview](#1-program-overview)
 2. [Investment Thesis](#2-investment-thesis)
-3. [The Mentor Network](#3-the-mentor-network)
-4. [Six-Week Program Outline](#4-six-week-program-outline)
-5. [Selection Criteria](#5-selection-criteria)
-6. [Open Questions](#6-open-questions)
+3. [Cohort Composition Strategy](#3-cohort-composition-strategy)
+4. [The Mentor Network](#4-the-mentor-network)
+5. [Six-Week Program Outline](#5-six-week-program-outline)
+6. [Selection Criteria](#6-selection-criteria)
+7. [Next Steps](#7-next-steps)
 
 ---
 
@@ -66,9 +67,7 @@ What makes this different from other accelerators? Three things.
 
 ### Program Leadership
 
-The program is led by a director with 15 years of global accelerator experience and an early-stage VC background. This is not our first accelerator. But it is Colorado's first AI accelerator, and we are building it the way we build everything here: together, with the community, one honest step at a time.
-
-**[TO DISCUSS]** Eugene -- any thoughts on how your role and involvement should be described in this section? Do you want to be positioned as a co-lead, advisor, or sponsor in the public-facing version of this document?
+The program is led by a director with 15 years of global accelerator experience and an early-stage VC background, with strategic sponsorship and advisory support from an active early-stage VC. This is not our first accelerator. But it is Colorado's first AI accelerator, and we are building it the way we build everything here: together, with the community, one honest step at a time.
 
 ---
 
@@ -80,9 +79,23 @@ The program is led by a director with 15 years of global accelerator experience 
 
 Here is what has changed. AI development tools -- large language models, no-code platforms, generative frameworks -- have collapsed the cost and complexity of building a first product. A solo founder with domain expertise and a clear customer pain point can now ship a working prototype in days, not months. The barrier to entry is no longer technical skill. It is clarity of problem, speed of execution, and willingness to iterate.
 
-### The New Class of Founder (lets look at what really makes a great team and how we think about different roles matter - GTM is more important and understadning product) - This doesn't have to always be an AI product, what does the dna of the of the cohort look like and split between wrappers and other types of AI tech. 
+### The New Class of Founder
 
 This shift has created a new class of founder: people who deeply understand a market because they have lived in it, and who can now build for that market directly. Teachers building ed-tech. Healthcare workers building patient tools. Creatives building production workflows. These founders do not look like the typical accelerator applicant, but their startups are closer to product-market fit on day one because their insight is earned, not researched.
+
+### What Makes a Great Founding Team in the AI Era
+
+AI has changed what a founding team needs to look like. A dedicated development team is no longer the prerequisite it once was -- a domain expert with modern AI tools can build a working product. But domain expertise alone is not enough to build a company.
+
+The most critical gap we see in early-stage AI startups is not technical. It is go-to-market. A nurse who deeply understands hospital workflows has earned insight that no outside researcher can replicate -- but without the ability to sell, distribute, and acquire customers, that insight stays trapped in a prototype. Go-to-market strategy and sales capability are now among the most important factors in whether an AI startup succeeds or fails.
+
+The strongest founding teams we look for combine three things:
+
+- **Domain expertise** -- deep, lived understanding of the problem and the customer
+- **Product sense** -- the ability to translate that understanding into a solution people will actually use
+- **Go-to-market capability** -- a clear plan for how the product reaches customers, and someone on the team who can execute on sales, distribution, and partnerships
+
+In the AI era, what used to require a three-person team -- domain expert, developer, business lead -- can now be covered by one or two people on the product and technical side. But the GTM function cannot be automated. The founders who succeed will be the ones who understand that building the product is only half the job. Getting it into the hands of paying customers is the other half, and that requires a different set of skills.
 
 ### Community as a Filter
 
@@ -96,13 +109,47 @@ The opportunity for early investors is straightforward: get access to a curated 
 
 Colorado is underserved in AI startup infrastructure compared to coastal hubs, but it has the talent, the cost advantages, and now the community to support a serious pipeline. ID345 Accelerator is how that pipeline gets built.
 
-**[TO DISCUSS]** Eugene -- does this thesis align with how you would frame the opportunity for investors in your network? Any angles you would add or sharpen?
+---
 
-**[NOTES]** _Space for Eugene's input on investment thesis framing, target investor profiles, and messaging._
+## 3. Cohort Composition Strategy
+
+### Building a Deliberate Portfolio
+
+The first cohort of 10 to 15 companies should not be assembled randomly. How we compose the cohort reflects our thesis about what works, what we want to learn, and how we manage risk across a small portfolio.
+
+Not every company in the cohort needs to be building an AI product. Some of the strongest opportunities come from founders who use AI as a competitive advantage in a traditional market -- not as the product itself, but as the engine that lets them move faster, serve customers better, or operate at a scale their competitors cannot match.
+
+### Three Categories of AI Startups
+
+We think about cohort companies across three categories:
+
+**AI Wrapper Companies** -- Startups built on top of existing AI models and APIs. These companies add value through user experience, workflow integration, vertical specialization, or data curation rather than through novel AI research. They ship fast and iterate quickly. The risk is defensibility -- if the underlying model improves or the platform builds the feature natively, the wrapper can lose its edge. The opportunity is speed to market and direct customer value.
+
+**Deep AI Technology Companies** -- Startups building novel AI capabilities, proprietary models, or foundational infrastructure. These companies have stronger technical moats but longer development timelines, higher capital needs, and more uncertainty about product-market fit. They require founders with both deep technical skill and the ability to translate that technology into a product someone will pay for.
+
+**AI-Advantaged Companies** -- Startups that are not AI-focused in their value proposition but use AI to compete unfairly in their market. A logistics company that uses AI to optimize routing. A healthcare platform that uses AI to reduce administrative burden. A creative agency that uses AI to produce at 10x the speed of competitors. These founders are often domain experts first, and their AI advantage is a means to an end, not the end itself.
+
+### Portfolio Mix and Risk
+
+For the first cohort, we want a deliberate mix across these categories. A cohort that is entirely wrapper companies carries concentration risk. A cohort that is entirely deep tech may not produce Demo Day-ready results in six weeks. A balanced portfolio gives us the best chance of strong outcomes while also giving us data on which category of AI startup benefits most from our program structure.
+
+The target composition for Cohort 1:
+
+| Category | Target Range | Rationale |
+|----------|-------------|-----------|
+| AI Wrapper Companies | 3-5 companies | Fast iteration, strong Demo Day potential, validates our speed-focused program design |
+| Deep AI Technology | 2-4 companies | Higher ceiling outcomes, tests our ability to support technically complex startups |
+| AI-Advantaged Companies | 3-5 companies | Closest to product-market fit, strongest domain expertise, validates our thesis on non-traditional founders |
+
+This is not a rigid formula. The right composition depends on the quality of applicants in each category. But going in with a framework ensures we are making intentional choices about the portfolio, not just filling seats.
+
+### What This Means for Selection
+
+Cohort composition directly informs selection. When reviewing applications, we are not just evaluating individual companies -- we are building a portfolio. A strong deep-tech application might be selected over an equally strong wrapper application if the cohort is already heavy on wrappers. The goal is a cohort where companies learn from each other and where our thesis about what works gets tested across multiple categories.
 
 ---
 
-## 3. The Mentor Network
+## 4. The Mentor Network
 
 ### How Mentorship Works at ID345
 
@@ -133,13 +180,11 @@ In addition to assigned mentors, each week we bring in **specialist mentors** wh
 - **Week 5 specialists**: Pitch coaching, financial modeling, investor relations
 - **Week 6 specialists**: Demo preparation, presentation skills, networking strategy
 
-**[TO DISCUSS]** Eugene -- would you like to be slotted in as a specialist mentor for any particular week? Week 5 (pitch/investor prep) and Week 4 (business model) seem like natural fits given your background, but open to your preference.
-
-**[NOTES]** _Additional mentor recruitment -- who else should we approach? Eugene's network contacts to consider._
+Eugene is confirmed as a specialist mentor for Week 4 (business model and go-to-market) and Week 5 (pitch preparation and investor readiness), with availability for additional sessions as needed.
 
 ---
 
-## 4. Six-Week Program Outline
+## 5. Six-Week Program Outline
 
 ### The Weekly Rhythm
 
@@ -154,8 +199,6 @@ Every week follows the same core structure so founders can build a rhythm. The c
 | **Friday afternoon** | Founder Stories session | In-person or virtual |
 | **Friday** | Mentor-director sync meeting | Virtual |
 | **Ongoing** | Assigned mentor check-ins (2x per week minimum) | Mentor's schedule |
-
-**[TO DISCUSS]** Eugene -- does this weekly cadence work for your schedule? Which sessions would you want to attend regularly vs. drop in on?
 
 ---
 
@@ -275,9 +318,7 @@ The focus shifts to getting pitch-ready for a VC audience. This includes financi
 
 #### Mentor Focus
 
-Intensive pitch coaching. Mentors run mock investor meetings with their startup and provide line-by-line feedback on the deck.
-
-**[TO DISCUSS]** Eugene -- would you want to run or co-lead the mock investor sessions this week? Your perspective as an active investor would be especially valuable here.
+Intensive pitch coaching. Mentors run mock investor meetings with their startup and provide line-by-line feedback on the deck. Eugene leads mock investor sessions this week, providing direct feedback from an active investor perspective.
 
 ---
 
@@ -305,15 +346,11 @@ Final polish on products and pitches. The week builds toward Demo Day -- a big i
 
 #### Mentor Focus
 
-Final prep and moral support. Mentors attend Demo Day and are available for introductions.
-
-**[TO DISCUSS]** Eugene -- who from your network should receive Demo Day invitations? Let us build an invite list together.
-
-**[NOTES]** _Demo Day venue logistics, A/V needs, catering, and event flow still need to be planned in detail._
+Final prep and moral support. Mentors attend Demo Day and are available for introductions. Eugene and team coordinate investor invite list and attend Demo Day to support introductions and follow-up conversations.
 
 ---
 
-## 5. Selection Criteria
+## 6. Selection Criteria
 
 ### What We Look For in Applicants
 
@@ -338,10 +375,12 @@ Final prep and moral support. Mentors attend Demo Day and are available for intr
 - You can learn new tools quickly and are not intimidated by unfamiliar territory
 - You have demonstrated the ability to make meaningful progress in short time frames
 
-#### Business Awareness
+#### Go-to-Market Awareness
 
 - You understand (or are actively working to understand) who pays for your product, why they pay, and how you reach them
 - You think about your market, not just your product
+- You have a point of view on how your product gets into the hands of customers -- through direct sales, partnerships, community, content, or other channels
+- If you are a domain expert, you can articulate how your domain knowledge translates into a customer acquisition advantage
 
 #### AI-Native Approach
 
@@ -359,42 +398,44 @@ Final prep and moral support. Mentors attend Demo Day and are available for intr
 - You are willing to help others in the cohort, not just focus on your own company
 - You understand that "we build together" is not a slogan -- it is how this works
 
-**[TO DISCUSS]** Eugene -- any criteria you would add, remove, or weight differently? Are there specific founder signals you look for that we should incorporate into the application review?
-
-**[NOTES]** _Application process and review committee structure still to be defined. Eugene's role in selection TBD._
-
 ---
 
-## 6. Open Questions
+## 7. Next Steps
 
-The following items are unresolved and need decisions before the program launches. These are intended for collaborative discussion between Sam and Eugene.
+The following items are in progress and have clear owners and timelines.
 
-### Timeline and Dates
+### Timeline and Launch
 
-- **Program start date** -- When does Cohort 1 begin? What is the target month/quarter?
-- **Application timeline and process** -- When do applications open? How long is the review window? What does the application look like?
+| Item | Owner | Status |
+|------|-------|--------|
+| Finalize Cohort 1 start date and program calendar | Sam | In progress |
+| Design and launch application process | Sam | In progress |
+| Define application review window and committee structure | Sam / Eugene | Upcoming |
 
-### Financial and Legal Structure
+### Financial and Legal
 
-- **SAFE note terms and structure** -- What are the investment terms for cohort companies? Valuation cap, discount, pro-rata rights?
-- **Budget and funding needs** -- What is the operating budget for the first cohort? What needs to be covered (space, events, staff time, perks)?
-- **Legal entity structure** -- What is the legal structure for the accelerator? Does it sit under an existing entity or need a new one?
+| Item | Owner | Status |
+|------|-------|--------|
+| Finalize SAFE note terms and investment structure | Sam / Eugene | In progress |
+| Confirm operating budget for Cohort 1 | Sam / Eugene | In progress |
+| Establish legal entity structure for the accelerator | Sam | In progress |
 
 ### Partnerships and Resources
 
-- **AI/cloud credit partnerships** -- Conversations with Google, DigitalOcean, AWS, and others for credits or in-kind support for cohort companies
-- **Additional mentor recruitment** -- Who else should we bring in? Specific expertise gaps to fill in the mentor bench
+| Item | Owner | Status |
+|------|-------|--------|
+| Secure AI/cloud credit partnerships (Google, DigitalOcean, AWS) | Sam | In progress |
+| Complete mentor recruitment and fill remaining expertise gaps | Sam | Ongoing |
+| Build Demo Day investor invite list | Sam / Eugene | Upcoming |
 
-### Demo Day
+### Program Readiness
 
-- **Demo Day venue logistics and invitations** -- Capacity, format, investor invite list, press outreach, streaming/recording plans
-
-### Eugene's Involvement
-
-- **Eugene's specific coaching and 1-on-1 schedule preferences** -- How much time per week can Eugene commit? Which sessions does he want to attend? Does he want dedicated 1-on-1 time with specific startups?
-
-**[NOTES]** _Use this section as a running list. Add new questions as they come up. Move items to the relevant section above once resolved._
+| Item | Owner | Status |
+|------|-------|--------|
+| Finalize cohort composition targets and selection framework | Sam / Eugene | In progress |
+| Confirm Eugene's specialist mentor schedule (Weeks 4 and 5) | Eugene | Confirmed |
+| Plan Demo Day logistics -- venue, A/V, catering, event flow | Sam | Upcoming |
 
 ---
 
-_This is a living document. Last updated: 2026-02-19._
+_This is a living document. Last updated: 2026-02-26._
